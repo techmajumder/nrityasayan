@@ -2,1276 +2,2693 @@
 <html lang="en">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sayan Majumder | Dance Portfolio</title>
+    <title>Sayan Majumder | Dance Portfolio</title>
 
-<meta
-    name="description"
-    content="Sayan Majumder — dancer, performer and learner of the Sabarno Dance style."
->
+    <meta
+        name="description"
+        content="Sayan Majumder — dancer, performer and learner of the Sabarno Dance style."
+    >
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
-    rel="stylesheet"
->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
+        rel="stylesheet"
+    >
 
-<style>
+    <style>
 
-/* =========================================================
-   COLOUR SYSTEM
-========================================================= */
+        /* =========================================================
+           COLOUR SYSTEM
+        ========================================================= */
 
-:root {
+        :root {
 
-    --gold: #e2b866;
-    --gold-light: #f7dfa7;
-    --gold-dark: #9b6c2e;
+            --gold: #e2b866;
+            --gold-light: #f7dfa7;
+            --gold-dark: #9b6c2e;
 
-    --ivory: #f8f0df;
-    --cream: #d8c6aa;
+            --ivory: #f8f0df;
+            --cream: #d8c6aa;
 
-    --black: #090706;
-    --black-soft: #120d0b;
+            --black: #090706;
+            --black-soft: #120d0b;
 
-    --maroon: #5b171f;
-    --maroon-dark: #260b10;
+            --maroon: #5b171f;
+            --maroon-dark: #260b10;
 
-    --muted: #9e9080;
+            --muted: #9e9080;
 
-    --line: rgba(226,184,102,.25);
+            --line: rgba(226,184,102,.25);
 
-    --serif: "Cormorant Garamond", Georgia, serif;
-    --sans: "DM Sans", Arial, sans-serif;
-    --script: "Italianno", cursive;
-}
+            --serif: "Cormorant Garamond", Georgia, serif;
+            --sans: "DM Sans", Arial, sans-serif;
+            --script: "Italianno", cursive;
+        }
 
 
-/* =========================================================
-   RESET
-========================================================= */
+        /* =========================================================
+           RESET
+        ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    background: var(--black);
-    color: var(--ivory);
-    font-family: var(--sans);
-    overflow-x: hidden;
-}
+        body {
+            background: var(--black);
+            color: var(--ivory);
+            font-family: var(--sans);
+            overflow-x: hidden;
+        }
 
-body.lock {
-    overflow: hidden;
-}
+        body.lock {
+            overflow: hidden;
+        }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-img {
-    max-width: 100%;
-    display: block;
-}
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
 
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
+        /* =========================================================
+           SCROLL PROGRESS
+        ========================================================= */
 
-.progress {
-    position: fixed;
-    top: 0;
-    left: 0;
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
 
-    width: 0;
-    height: 3px;
+            width: 0;
+            height: 3px;
 
-    background: var(--gold);
+            background: var(--gold);
 
-    z-index: 9999;
-}
+            z-index: 9999;
+        }
 
 
-/* =========================================================
-   FIRST PAGE / HERO
+        /* =========================================================
+           HERO
+           background1.png IS THE COMPLETE FIRST VIEWPORT
+        ========================================================= */
 
-   background1.png IS THE COMPLETE FIRST VIEWPORT.
-========================================================= */
+        .hero {
 
-.hero {
+            position: relative;
 
-    position: relative;
+            width: 100%;
 
-    width: 100%;
+            height: 100vh;
+            height: 100svh;
 
-    height: 100vh;
-    height: 100svh;
-    min-height: 650px;
+            min-height: 650px;
 
-    overflow: hidden;
+            overflow: hidden;
 
-    background-image: url("assests/background1.png");
+            background-image: url("assests/background1.png");
 
-    background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
 
-    background-position: center center;
 
-    background-repeat: no-repeat;
-}
+        /* =========================================================
+           TRANSPARENT NAVIGATION
+        ========================================================= */
 
+        .nav {
 
-/* =========================================================
-   NAVIGATION
+            position: absolute;
 
-   TRANSPARENT.
-   SITS DIRECTLY OVER background1.png.
-========================================================= */
+            top: 0;
+            left: 0;
 
-.nav {
+            width: 100%;
 
-    position: absolute;
+            z-index: 50;
 
-    top: 0;
-    left: 0;
+            display: flex;
 
-    width: 100%;
+            justify-content: flex-end;
 
-    z-index: 50;
+            padding: 32px 5vw;
 
-    display: flex;
+            background: transparent;
+        }
 
-    justify-content: flex-end;
+        .nav-links {
 
-    padding: 32px 5vw;
+            display: flex;
 
-    background: transparent;
-}
+            align-items: center;
 
-.nav-links {
+            gap: 42px;
 
-    display: flex;
+            list-style: none;
+        }
 
-    align-items: center;
+        .nav-links a {
 
-    gap: 42px;
+            position: relative;
 
-    list-style: none;
-}
+            color: #f4d28c;
 
-.nav-links a {
+            font-size: 11px;
 
-    position: relative;
+            font-weight: 600;
 
-    color: #f4d28c;
+            letter-spacing: .2em;
 
-    font-size: 11px;
+            text-transform: uppercase;
 
-    font-weight: 600;
+            text-shadow:
+                0 2px 5px rgba(0,0,0,.9),
+                0 0 12px rgba(0,0,0,.5);
 
-    letter-spacing: .2em;
+            transition:
+                color .3s ease,
+                transform .3s ease;
+        }
 
-    text-transform: uppercase;
+        .nav-links a::after {
 
-    text-shadow:
-        0 2px 5px rgba(0,0,0,.9),
-        0 0 12px rgba(0,0,0,.5);
+            content: "";
 
-    transition:
-        color .3s ease,
-        transform .3s ease;
-}
+            position: absolute;
 
-.nav-links a::after {
+            left: 0;
+            bottom: -9px;
 
-    content: "";
+            width: 0;
+            height: 1px;
 
-    position: absolute;
+            background: var(--gold-light);
 
-    left: 0;
-    bottom: -9px;
+            transition: width .35s ease;
+        }
 
-    width: 0;
-    height: 1px;
+        .nav-links a:hover {
 
-    background: var(--gold-light);
+            color: #fff1c5;
 
-    transition: width .35s ease;
-}
+            transform: translateY(-2px);
+        }
 
-.nav-links a:hover {
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-    color: #fff1c5;
 
-    transform: translateY(-2px);
-}
+        /* =========================================================
+           HERO READABILITY LAYER
+        ========================================================= */
 
-.nav-links a:hover::after {
+        .hero-vignette {
 
-    width: 100%;
-}
+            position: absolute;
 
+            inset: 0;
 
-/* =========================================================
-   HERO READABILITY LAYER
+            pointer-events: none;
 
-   Does not replace the background image.
-========================================================= */
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.18),
+                    transparent 42%,
+                    rgba(0,0,0,.12)
+                );
 
-.hero-vignette {
+            z-index: 1;
+        }
 
-    position: absolute;
 
-    inset: 0;
+        /* =========================================================
+           HERO CONTENT
+        ========================================================= */
 
-    pointer-events: none;
+        .hero-content {
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.18),
-            transparent 42%,
-            rgba(0,0,0,.12)
+            position: absolute;
+
+            z-index: 5;
+
+            left: 7vw;
+
+            bottom: 12vh;
+
+            max-width: 550px;
+        }
+
+
+        /* =========================================================
+           HERO OVERLINE
+        ========================================================= */
+
+        .hero-overline {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            margin-bottom: 18px;
+
+            color: var(--gold-light);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: .35em;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 8px rgba(0,0,0,.9);
+        }
+
+        .hero-overline::before {
+
+            content: "";
+
+            width: 42px;
+            height: 1px;
+
+            background: var(--gold);
+        }
+
+
+        /* =========================================================
+           MAIN NAME
+        ========================================================= */
+
+        .hero-name {
+
+            font-family: var(--serif);
+
+            font-size: clamp(80px, 11vw, 160px);
+
+            font-weight: 500;
+
+            line-height: .72;
+
+            letter-spacing: -.055em;
+
+            color: var(--ivory);
+
+            text-shadow:
+                0 5px 25px rgba(0,0,0,.7);
+
+            animation:
+                entrance 1.2s ease both;
+        }
+
+        .hero-name span {
+            display: block;
+        }
+
+        .hero-name .gold {
+
+            margin-left: 4vw;
+
+            color: var(--gold-light);
+        }
+
+
+        /* =========================================================
+           SCRIPT LINE
+        ========================================================= */
+
+        .hero-script {
+
+            margin-top: 20px;
+
+            margin-left: 9vw;
+
+            font-family: var(--script);
+
+            font-size: clamp(38px, 4.5vw, 65px);
+
+            color: #f4d28c;
+
+            transform: rotate(-4deg);
+
+            text-shadow:
+                0 3px 12px rgba(0,0,0,.8);
+
+            animation:
+                entrance 1.2s .2s ease both;
+        }
+
+
+        /* =========================================================
+           HERO DESCRIPTION
+        ========================================================= */
+
+        .hero-description {
+
+            width: 340px;
+
+            max-width: 85vw;
+
+            margin-top: 25px;
+
+            color: #f1e4cf;
+
+            font-family: var(--serif);
+
+            font-size: 19px;
+
+            line-height: 1.4;
+
+            text-shadow:
+                0 2px 8px rgba(0,0,0,.9);
+
+            animation:
+                entrance 1.2s .4s ease both;
+        }
+
+
+        /* =========================================================
+           HERO BUTTON
+        ========================================================= */
+
+        .hero-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 17px;
+
+            margin-top: 28px;
+
+            padding-bottom: 9px;
+
+            border-bottom:
+                1px solid var(--gold);
+
+            color: var(--gold-light);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: .22em;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 7px rgba(0,0,0,.8);
+
+            transition:
+                gap .3s ease,
+                color .3s ease;
+
+            animation:
+                entrance 1.2s .55s ease both;
+        }
+
+        .hero-button:hover {
+
+            gap: 28px;
+
+            color: white;
+        }
+
+
+        /* =========================================================
+           VERTICAL LABEL
+        ========================================================= */
+
+        .hero-label {
+
+            position: absolute;
+
+            z-index: 5;
+
+            right: 27px;
+
+            bottom: 80px;
+
+            writing-mode: vertical-rl;
+
+            color: rgba(247,223,167,.85);
+
+            font-size: 9px;
+
+            letter-spacing: .4em;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 8px rgba(0,0,0,.8);
+        }
+
+
+        /* =========================================================
+           SCROLL INDICATOR
+        ========================================================= */
+
+        .scroll {
+
+            position: absolute;
+
+            z-index: 5;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--gold-light);
+
+            font-size: 8px;
+
+            letter-spacing: .3em;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 7px rgba(0,0,0,.9);
+        }
+
+        .scroll-line {
+
+            width: 1px;
+
+            height: 42px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    var(--gold),
+                    transparent
+                );
+
+            animation:
+                scroll 2s infinite;
+        }
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        .section {
+
+            padding: 140px 7vw;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .section-inner {
+
+            width: min(1250px, 100%);
+
+            margin: auto;
+        }
+
+        .black-section {
+            background: var(--black);
+        }
+
+        .red-section {
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(124,35,45,.25),
+                    transparent 35%
+                ),
+                var(--maroon-dark);
+        }
+
+
+        /* =========================================================
+           SECTION LABEL
+        ========================================================= */
+
+        .section-label {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            color: var(--gold);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: .3em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .section-label::before {
+
+            content: "";
+
+            width: 38px;
+
+            height: 1px;
+
+            background: var(--gold);
+        }
+
+
+        /* =========================================================
+           SECTION TITLE
+        ========================================================= */
+
+        .section-title {
+
+            font-family: var(--serif);
+
+            font-size: clamp(60px, 8vw, 110px);
+
+            font-weight: 500;
+
+            line-height: .8;
+
+            letter-spacing: -.045em;
+        }
+
+        .section-title em {
+
+            color: var(--gold-light);
+
+            font-style: italic;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: .65fr 1.35fr;
+
+            gap: 90px;
+        }
+
+        .about-number {
+
+            font-family: var(--serif);
+
+            font-size: 190px;
+
+            line-height: .65;
+
+            color: rgba(226,184,102,.08);
+        }
+
+        .about-content {
+
+            max-width: 750px;
+        }
+
+        .about-intro {
+
+            margin-top: 55px;
+
+            color: var(--ivory);
+
+            font-family: var(--serif);
+
+            font-size: clamp(28px, 3vw, 43px);
+
+            line-height: 1.15;
+        }
+
+        .about-intro span {
+            color: var(--gold-light);
+        }
+
+        .about-text {
+
+            margin-top: 30px;
+
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+        .quote {
+
+            margin-top: 55px;
+
+            padding: 30px 35px;
+
+            border-left:
+                1px solid var(--gold);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(226,184,102,.08),
+                    transparent
+                );
+        }
+
+        .quote p {
+
+            color: var(--gold-light);
+
+            font-family: var(--serif);
+
+            font-size: 28px;
+
+            font-style: italic;
+
+            line-height: 1.2;
+        }
+
+
+        /* =========================================================
+           PHILOSOPHY
+        ========================================================= */
+
+        .philosophy {
+
+            padding: 120px 7vw;
+
+            text-align: center;
+
+            border-top:
+                1px solid var(--line);
+
+            border-bottom:
+                1px solid var(--line);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #3b1015,
+                    #100908
+                );
+        }
+
+        .philosophy-label {
+
+            color: var(--gold);
+
+            font-size: 9px;
+
+            letter-spacing: .35em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .philosophy-title {
+
+            font-family: var(--serif);
+
+            font-size: clamp(45px, 6vw, 82px);
+
+            line-height: .95;
+
+            font-weight: 400;
+        }
+
+        .philosophy-title span {
+
+            color: var(--gold-light);
+
+            font-style: italic;
+        }
+
+
+        /* =========================================================
+           JOURNEY
+        ========================================================= */
+
+        .journey-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 50px;
+
+            margin-bottom: 80px;
+        }
+
+        .journey-description {
+
+            max-width: 350px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .journey-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            border-top:
+                1px solid var(--line);
+
+            border-bottom:
+                1px solid var(--line);
+        }
+
+        .journey-card {
+
+            position: relative;
+
+            min-height: 390px;
+
+            padding: 42px 35px;
+
+            border-right:
+                1px solid var(--line);
+
+            overflow: hidden;
+
+            transition:
+                background .4s ease,
+                transform .4s ease;
+        }
+
+        .journey-card:last-child {
+            border-right: none;
+        }
+
+        .journey-card:hover {
+
+            background:
+                rgba(226,184,102,.045);
+
+            transform:
+                translateY(-7px);
+        }
+
+        .journey-number {
+
+            color: var(--gold);
+
+            font-family: var(--serif);
+
+            font-size: 19px;
+
+            margin-bottom: 80px;
+        }
+
+        .journey-card h3 {
+
+            color: var(--ivory);
+
+            font-family: var(--serif);
+
+            font-size: 42px;
+
+            font-weight: 500;
+
+            line-height: .9;
+
+            margin-bottom: 20px;
+        }
+
+        .journey-card p {
+
+            max-width: 270px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        .journey-word {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            right: 25px;
+
+            color: rgba(226,184,102,.25);
+
+            font-size: 9px;
+
+            letter-spacing: .25em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           PORTFOLIO
+           FLEXIBLE IMAGE SYSTEM
+        ========================================================= */
+
+        .portfolio-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 40px;
+
+            margin-bottom: 65px;
+        }
+
+        .portfolio-description {
+
+            max-width: 370px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        /*
+           IMPORTANT:
+
+           No fixed image height.
+           No fixed aspect-ratio.
+
+           Portrait images remain portrait.
+           Landscape images remain landscape.
+           Square images remain square.
+        */
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+
+            align-items: start;
+        }
+
+        .gallery-item {
+
+            position: relative;
+
+            width: 100%;
+
+            overflow: hidden;
+
+            cursor: pointer;
+
+            background: #110c0a;
+        }
+
+        .gallery-item img {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            max-width: 100%;
+
+            object-fit: contain;
+
+            transition:
+                transform .8s cubic-bezier(.2,.7,.2,1),
+                filter .7s ease;
+        }
+
+        .gallery-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            padding: 24px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent 45%,
+                    rgba(0,0,0,.82)
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity .4s ease;
+        }
+
+        .gallery-number {
+
+            color: var(--gold-light);
+
+            font-family: var(--serif);
+
+            font-size: 30px;
+        }
+
+        .gallery-open {
+
+            color: var(--gold-light);
+
+            font-size: 10px;
+
+            letter-spacing: .2em;
+
+            text-transform: uppercase;
+        }
+
+        .gallery-item:hover img {
+
+            transform: scale(1.045);
+
+            filter:
+                brightness(.72)
+                saturate(.9);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+
+        /* =========================================================
+           STATEMENT
+        ========================================================= */
+
+        .statement {
+
+            padding: 160px 7vw;
+
+            background: var(--black);
+
+            text-align: center;
+        }
+
+        .statement-inner {
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .statement blockquote {
+
+            color: var(--ivory);
+
+            font-family: var(--serif);
+
+            font-size: clamp(42px, 6vw, 78px);
+
+            font-weight: 400;
+
+            line-height: .95;
+        }
+
+        .statement blockquote span {
+
+            color: var(--gold-light);
+
+            font-style: italic;
+        }
+
+        .statement-author {
+
+            margin-top: 35px;
+
+            color: var(--gold);
+
+            font-size: 9px;
+
+            letter-spacing: .35em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           CONNECT
+        ========================================================= */
+
+        .connect {
+
+            min-height: 75vh;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+        .connect-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.2fr .8fr;
+
+            gap: 100px;
+
+            align-items: end;
+        }
+
+        .connect-title {
+
+            font-family: var(--serif);
+
+            font-size: clamp(80px, 11vw, 150px);
+
+            line-height: .7;
+
+            font-weight: 500;
+
+            letter-spacing: -.055em;
+        }
+
+        .connect-title span {
+
+            display: block;
+
+            margin-left: 9vw;
+
+            color: var(--gold-light);
+        }
+
+        .connect-copy {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+        .social {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .social a {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 0;
+
+            border-top:
+                1px solid var(--line);
+
+            color: var(--cream);
+
+            font-family: var(--serif);
+
+            font-size: 26px;
+
+            transition:
+                color .3s ease,
+                padding .3s ease;
+        }
+
+        .social a:last-child {
+
+            border-bottom:
+                1px solid var(--line);
+        }
+
+        .social a:hover {
+
+            color: var(--gold-light);
+
+            padding-left: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 28px 7vw;
+
+            border-top:
+                1px solid rgba(226,184,102,.15);
+
+            color: #76695c;
+
+            font-size: 9px;
+
+            letter-spacing: .14em;
+
+            text-transform: uppercase;
+        }
+
+        .footer-star {
+
+            color: var(--gold-dark);
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================================
+           IMAGE VIEWER
+        ========================================================= */
+
+        .viewer {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 500;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                rgba(4,2,2,.97);
+
+            backdrop-filter: blur(15px);
+        }
+
+        .viewer.active {
+            display: flex;
+        }
+
+        .viewer-image {
+
+            max-width: 88vw;
+
+            max-height: 85vh;
+
+            width: auto;
+
+            height: auto;
+
+            object-fit: contain;
+
+            box-shadow:
+                0 20px 80px rgba(0,0,0,.7);
+        }
+
+        .viewer-close {
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 35px;
+
+            width: 45px;
+
+            height: 45px;
+
+            border: 1px solid var(--line);
+
+            background: transparent;
+
+            color: var(--gold-light);
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            transition:
+                background .3s ease,
+                color .3s ease;
+        }
+
+        .viewer-close:hover {
+
+            background: var(--gold);
+
+            color: var(--black);
+        }
+
+        .viewer-prev,
+        .viewer-next {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 55px;
+
+            height: 55px;
+
+            border: 1px solid var(--line);
+
+            background: rgba(0,0,0,.35);
+
+            color: var(--gold-light);
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            transition:
+                background .3s ease,
+                color .3s ease;
+        }
+
+        .viewer-prev {
+            left: 30px;
+        }
+
+        .viewer-next {
+            right: 30px;
+        }
+
+        .viewer-prev:hover,
+        .viewer-next:hover {
+
+            background: var(--gold);
+
+            color: var(--black);
+        }
+
+        .viewer-counter {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: var(--gold-light);
+
+            font-size: 10px;
+
+            letter-spacing: .2em;
+        }
+
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+                opacity .9s ease,
+                transform .9s ease;
+        }
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================= */
+
+        @keyframes entrance {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+        @keyframes scroll {
+
+            0% {
+                opacity: .3;
+                transform: scaleY(.5);
+                transform-origin: top;
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+
+            100% {
+                opacity: .3;
+                transform: scaleY(.5);
+                transform-origin: bottom;
+            }
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav {
+                padding: 25px 5vw;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+            .hero-content {
+                left: 6vw;
+                bottom: 12vh;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .about-number {
+                display: none;
+            }
+
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-card {
+                min-height: 300px;
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .journey-card:last-child {
+                border-bottom: none;
+            }
+
+            .connect-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .gallery {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .hero {
+
+                min-height: 620px;
+
+                background-position: center center;
+            }
+
+            .nav {
+
+                justify-content: center;
+
+                padding:
+                    24px 20px;
+            }
+
+            .nav-links {
+
+                gap: 16px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .nav-links a {
+
+                font-size: 9px;
+
+                letter-spacing: .14em;
+            }
+
+            .hero-content {
+
+                left: 7vw;
+
+                right: 7vw;
+
+                bottom: 12vh;
+            }
+
+            .hero-name {
+
+                font-size:
+                    clamp(62px, 18vw, 100px);
+            }
+
+            .hero-name .gold {
+
+                margin-left: 7vw;
+            }
+
+            .hero-script {
+
+                margin-left: 12vw;
+
+                font-size:
+                    clamp(34px, 10vw, 50px);
+            }
+
+            .hero-description {
+
+                width: auto;
+
+                font-size: 17px;
+            }
+
+            .hero-label {
+                display: none;
+            }
+
+            .scroll {
+                display: none;
+            }
+
+            .section {
+
+                padding:
+                    90px 7vw;
+            }
+
+            .about-intro {
+
+                margin-top: 35px;
+
+                font-size: 31px;
+            }
+
+            .quote p {
+                font-size: 23px;
+            }
+
+            .journey-top,
+            .portfolio-top {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                margin-bottom: 50px;
+            }
+
+            .gallery {
+
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+            }
+
+            .statement {
+
+                padding:
+                    100px 7vw;
+            }
+
+            .statement blockquote {
+
+                font-size: 43px;
+            }
+
+            .connect {
+
+                min-height: auto;
+            }
+
+            .connect-title {
+
+                font-size:
+                    clamp(70px, 19vw, 110px);
+            }
+
+            .social a {
+
+                font-size: 23px;
+            }
+
+            footer {
+
+                flex-direction: column;
+
+                gap: 12px;
+
+                text-align: center;
+            }
+
+            .viewer-image {
+
+                max-width: 92vw;
+
+                max-height: 80vh;
+            }
+
+            .viewer-prev,
+            .viewer-next {
+
+                width: 42px;
+
+                height: 42px;
+
+                font-size: 19px;
+            }
+
+            .viewer-prev {
+                left: 12px;
+            }
+
+            .viewer-next {
+                right: 12px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         SCROLL PROGRESS
+    ========================================================== -->
+
+    <div class="progress" id="progress"></div>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <header class="hero" id="home">
+
+        <nav class="nav">
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#journey">Journey</a>
+                </li>
+
+                <li>
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+
+                <li>
+                    <a href="#connect">Connect</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="hero-vignette"></div>
+
+
+        <div class="hero-content">
+
+            <div class="hero-overline">
+                Dancer · Performer · Learner
+            </div>
+
+            <h1 class="hero-name">
+
+                <span>Sayan</span>
+
+                <span class="gold">
+                    Majumder
+                </span>
+
+            </h1>
+
+            <div class="hero-script">
+                Dance is expression
+            </div>
+
+            <p class="hero-description">
+                Exploring movement, rhythm and expression through
+                the Sabarno Dance style.
+            </p>
+
+            <a
+                href="#portfolio"
+                class="hero-button"
+            >
+                Explore my journey
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="hero-label">
+            Sabarno Dance · Tradition · Movement
+        </div>
+
+
+        <div class="scroll">
+
+            <span>Scroll</span>
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================== -->
+
+    <section
+        class="section black-section"
+        id="about"
+    >
+
+        <div class="section-inner">
+
+            <div class="about-grid">
+
+                <div>
+
+                    <div class="section-label">
+                        About
+                    </div>
+
+                    <div class="about-number">
+                        01
+                    </div>
+
+                </div>
+
+
+                <div class="about-content reveal">
+
+                    <h2 class="section-title">
+                        My Dance
+                        <br>
+                        <em>Journey</em>
+                    </h2>
+
+
+                    <p class="about-intro">
+
+                        Three years of learning,
+                        movement and discovering
+                        <span>expression</span>
+                        through dance.
+
+                    </p>
+
+
+                    <p class="about-text">
+
+                        I have been learning the Sabarno Dance style
+                        under Guru Sri Sabarnik De at Brahma-Kamal
+                        Institute of Dance and Drawing.
+
+                        <br><br>
+
+                        My practice explores the relationship between
+                        classical Indian movement, expression, rhythm
+                        and contemporary interpretation.
+
+                    </p>
+
+
+                    <div class="quote">
+
+                        <p>
+                            “Sabarno Dance style is a fusion of
+                            Natya Shastra, Uday Shankar style and Odissi.”
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PHILOSOPHY
+    ========================================================== -->
+
+    <section class="philosophy">
+
+        <div class="philosophy-label">
+            Philosophy
+        </div>
+
+        <h2 class="philosophy-title">
+
+            Movement becomes
+            <span>meaning</span>
+            when expression
+            becomes honest.
+
+        </h2>
+
+    </section>
+
+
+    <!-- =========================================================
+         JOURNEY
+    ========================================================== -->
+
+    <section
+        class="section red-section"
+        id="journey"
+    >
+
+        <div class="section-inner">
+
+            <div class="journey-top">
+
+                <div>
+
+                    <div class="section-label">
+                        The Foundation
+                    </div>
+
+                    <h2 class="section-title">
+                        The
+                        <em>Journey</em>
+                    </h2>
+
+                </div>
+
+
+                <p class="journey-description">
+
+                    The Sabarno Dance style draws from multiple
+                    traditions, creating a language where rhythm,
+                    expression and movement come together.
+
+                </p>
+
+            </div>
+
+
+            <div class="journey-grid reveal">
+
+
+                <article class="journey-card">
+
+                    <div class="journey-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Natya
+                        <br>
+                        Shastra
+                    </h3>
+
+                    <p>
+
+                        Exploring the foundations of Indian
+                        performance traditions, expression,
+                        gesture and dramatic movement.
+
+                    </p>
+
+                    <div class="journey-word">
+                        Expression
+                    </div>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Uday
+                        <br>
+                        Shankar
+                    </h3>
+
+                    <p>
+
+                        Learning from a movement vocabulary that
+                        brings Indian artistic traditions into a
+                        more contemporary physical language.
+
+                    </p>
+
+                    <div class="journey-word">
+                        Movement
+                    </div>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Odissi
+                    </h3>
+
+                    <p>
+
+                        Discovering rhythm, posture, musicality
+                        and expressive qualities associated with
+                        the Odissi tradition.
+
+                    </p>
+
+                    <div class="journey-word">
+                        Rhythm
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PORTFOLIO
+    ========================================================== -->
+
+    <section
+        class="section black-section"
+        id="portfolio"
+    >
+
+        <div class="section-inner">
+
+
+            <div class="portfolio-top">
+
+                <div>
+
+                    <div class="section-label">
+                        Selected Work
+                    </div>
+
+                    <h2 class="section-title">
+                        Dance
+                        <br>
+                        <em>Portfolio</em>
+                    </h2>
+
+                </div>
+
+
+                <p class="portfolio-description">
+
+                    A collection of moments from performances,
+                    practice and my continuing exploration of
+                    movement and expression.
+
+                </p>
+
+            </div>
+
+
+            <!--
+                FLEXIBLE GALLERY
+
+                You can add more images simply by copying
+                another .gallery-item.
+
+                Portrait = portrait
+                Landscape = landscape
+                Square = square
+
+                No fixed height is applied.
+            -->
+
+            <div class="gallery reveal">
+
+
+                <div
+                    class="gallery-item"
+                    data-index="0"
+                >
+
+                    <img
+                        src="assests/Sayan01.jpg"
+                        alt="Sayan Majumder dance photograph"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-number">
+                            01
+                        </span>
+
+                        <span class="gallery-open">
+                            View
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="gallery-item"
+                    data-index="1"
+                >
+
+                    <img
+                        src="assests/Sayan3.jpg"
+                        alt="Sayan Majumder dance photograph"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-number">
+                            02
+                        </span>
+
+                        <span class="gallery-open">
+                            View
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="gallery-item"
+                    data-index="2"
+                >
+
+                    <img
+                        src="assests/Sayan4.jpg"
+                        alt="Sayan Majumder dance photograph"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-number">
+                            03
+                        </span>
+
+                        <span class="gallery-open">
+                            View
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="gallery-item"
+                    data-index="3"
+                >
+
+                    <img
+                        src="assests/Sayan5.jpg"
+                        alt="Sayan Majumder dance photograph"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-number">
+                            04
+                        </span>
+
+                        <span class="gallery-open">
+                            View
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="gallery-item"
+                    data-index="4"
+                >
+
+                    <img
+                        src="assests/Sayan6.jpg"
+                        alt="Sayan Majumder dance photograph"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-number">
+                            05
+                        </span>
+
+                        <span class="gallery-open">
+                            View
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="gallery-item"
+                    data-index="5"
+                >
+
+                    <img
+                        src="assests/Sayan7.jpg"
+                        alt="Sayan Majumder dance photograph"
+                        loading="lazy"
+                    >
+
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-number">
+                            06
+                        </span>
+
+                        <span class="gallery-open">
+                            View
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         STATEMENT
+    ========================================================== -->
+
+    <section class="statement">
+
+        <div class="statement-inner reveal">
+
+            <blockquote>
+
+                “Dance is not only movement.
+                It is the language through which
+                <span>emotion becomes visible.</span>”
+
+            </blockquote>
+
+            <div class="statement-author">
+                Sayan Majumder
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONNECT
+    ========================================================== -->
+
+    <section
+        class="section red-section connect"
+        id="connect"
+    >
+
+        <div class="section-inner">
+
+            <div class="connect-grid">
+
+
+                <div>
+
+                    <div class="section-label">
+                        Connect
+                    </div>
+
+                    <h2 class="connect-title">
+
+                        Let's
+
+                        <span>
+                            Connect
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <p class="connect-copy">
+
+                        For performances, collaborations,
+                        creative projects or simply to connect,
+                        you can find me through the platforms below.
+
+                    </p>
+
+
+                    <div class="social">
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <span>
+                                Instagram
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <span>
+                                Facebook
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <span>
+            © 2026 Sayan Majumder
+        </span>
+
+        <span class="footer-star">
+            ✦
+        </span>
+
+        <span>
+            Dance · Expression · Movement
+        </span>
+
+    </footer>
+
+
+    <!-- =========================================================
+         FULL SCREEN IMAGE VIEWER
+    ========================================================== -->
+
+    <div
+        class="viewer"
+        id="viewer"
+        aria-hidden="true"
+    >
+
+        <button
+            class="viewer-close"
+            id="viewerClose"
+            aria-label="Close image viewer"
+        >
+            ×
+        </button>
+
+
+        <button
+            class="viewer-prev"
+            id="viewerPrev"
+            aria-label="Previous image"
+        >
+            ‹
+        </button>
+
+
+        <img
+            class="viewer-image"
+            id="viewerImage"
+            src=""
+            alt="Dance photograph"
+        >
+
+
+        <button
+            class="viewer-next"
+            id="viewerNext"
+            aria-label="Next image"
+        >
+            ›
+        </button>
+
+
+        <div
+            class="viewer-counter"
+            id="viewerCounter"
+        >
+            01 / 06
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =========================================================
+           SCROLL PROGRESS
+        ========================================================= */
+
+        const progress =
+            document.getElementById("progress");
+
+        function updateProgress() {
+
+            const scrollTop =
+                window.scrollY;
+
+            const documentHeight =
+                document.documentElement.scrollHeight -
+                window.innerHeight;
+
+            const percentage =
+                documentHeight > 0
+                    ? (scrollTop / documentHeight) * 100
+                    : 0;
+
+            progress.style.width =
+                percentage + "%";
+        }
+
+        window.addEventListener(
+            "scroll",
+            updateProgress,
+            { passive: true }
         );
 
-    z-index: 1;
-}
+        updateProgress();
 
 
-/* =========================================================
-   HERO CONTENT
-========================================================= */
+        /* =========================================================
+           REVEAL ON SCROLL
+        ========================================================== */
 
-.hero-content {
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
-    position: absolute;
+        const revealObserver =
+            new IntersectionObserver(
 
-    z-index: 5;
+                (entries, observer) => {
 
-    left: 7vw;
+                    entries.forEach(entry => {
 
-    bottom: 12vh;
+                        if (entry.isIntersecting) {
 
-    max-width: 550px;
-}
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
+                            observer.unobserve(
+                                entry.target
+                            );
+                        }
 
-/* =========================================================
-   HERO OVERLINE
-========================================================= */
+                    });
 
-.hero-overline {
+                },
 
-    display: flex;
+                {
+                    threshold: 0.12
+                }
 
-    align-items: center;
+            );
 
-    gap: 13px;
 
-    margin-bottom: 18px;
+        revealElements.forEach(element => {
 
-    color: var(--gold-light);
+            revealObserver.observe(element);
 
-    font-size: 10px;
+        });
 
-    font-weight: 600;
 
-    letter-spacing: .35em;
+        /* =========================================================
+           IMAGE VIEWER
+        ========================================================== */
 
-    text-transform: uppercase;
+        const galleryItems =
+            document.querySelectorAll(".gallery-item");
 
-    text-shadow:
-        0 2px 8px rgba(0,0,0,.9);
-}
+        const viewer =
+            document.getElementById("viewer");
 
-.hero-overline::before {
+        const viewerImage =
+            document.getElementById("viewerImage");
 
-    content: "";
+        const viewerClose =
+            document.getElementById("viewerClose");
 
-    width: 42px;
+        const viewerPrev =
+            document.getElementById("viewerPrev");
 
-    height: 1px;
+        const viewerNext =
+            document.getElementById("viewerNext");
 
-    background: var(--gold);
-}
+        const viewerCounter =
+            document.getElementById("viewerCounter");
 
 
-/* =========================================================
-   MAIN NAME
-========================================================= */
+        const images = Array.from(galleryItems)
+            .map(item => {
 
-.hero-name {
+                const image =
+                    item.querySelector("img");
 
-    font-family: var(--serif);
+                return {
+                    src: image.src,
+                    alt: image.alt
+                };
 
-    font-size: clamp(80px, 11vw, 160px);
+            });
 
-    font-weight: 500;
 
-    line-height: .72;
+        let currentImage = 0;
 
-    letter-spacing: -.055em;
 
-    color: var(--ivory);
+        function updateViewer() {
 
-    text-shadow:
-        0 5px 25px rgba(0,0,0,.7);
+            if (!images.length) return;
 
-    animation:
-        entrance 1.2s ease both;
-}
+            viewerImage.src =
+                images[currentImage].src;
 
-.hero-name span {
-    display: block;
-}
+            viewerImage.alt =
+                images[currentImage].alt;
 
-.hero-name .gold {
+            viewerCounter.textContent =
+                String(currentImage + 1).padStart(2, "0")
+                + " / "
+                + String(images.length).padStart(2, "0");
+        }
 
-    margin-left: 4vw;
 
-    color: var(--gold-light);
-}
+        function openViewer(index) {
 
+            currentImage = index;
 
-/* =========================================================
-   SCRIPT LINE
-========================================================= */
+            updateViewer();
 
-.hero-script {
+            viewer.classList.add("active");
 
-    margin-top: 20px;
+            viewer.setAttribute(
+                "aria-hidden",
+                "false"
+            );
 
-    margin-left: 9vw;
+            document.body.classList.add("lock");
+        }
 
-    font-family: var(--script);
 
-    font-size: clamp(38px, 4.5vw, 65px);
+        function closeViewer() {
 
-    color: #f4d28c;
+            viewer.classList.remove("active");
 
-    transform: rotate(-4deg);
+            viewer.setAttribute(
+                "aria-hidden",
+                "true"
+            );
 
-    text-shadow:
-        0 3px 12px rgba(0,0,0,.8);
+            document.body.classList.remove("lock");
+        }
 
-    animation:
-        entrance 1.2s .2s ease both;
-}
 
+        function showNext() {
 
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
+            currentImage =
+                (currentImage + 1) %
+                images.length;
 
-.hero-description {
+            updateViewer();
+        }
 
-    width: 340px;
 
-    max-width: 85vw;
+        function showPrevious() {
 
-    margin-top: 25px;
+            currentImage =
+                (currentImage - 1 + images.length) %
+                images.length;
 
-    color: #f1e4cf;
+            updateViewer();
+        }
 
-    font-family: var(--serif);
 
-    font-size: 19px;
+        galleryItems.forEach(
+            (item, index) => {
 
-    line-height: 1.4;
+                item.addEventListener(
+                    "click",
+                    () => openViewer(index)
+                );
 
-    text-shadow:
-        0 2px 8px rgba(0,0,0,.9);
-
-    animation:
-        entrance 1.2s .4s ease both;
-}
-
-
-/* =========================================================
-   HERO BUTTON
-========================================================= */
-
-.hero-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 17px;
-
-    margin-top: 28px;
-
-    padding-bottom: 9px;
-
-    border-bottom:
-        1px solid var(--gold);
-
-    color: var(--gold-light);
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: .22em;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 2px 7px rgba(0,0,0,.8);
-
-    transition:
-        gap .3s ease,
-        color .3s ease;
-
-    animation:
-        entrance 1.2s .55s ease both;
-}
-
-.hero-button:hover {
-
-    gap: 28px;
-
-    color: white;
-}
-
-
-/* =========================================================
-   VERTICAL LABEL
-========================================================= */
-
-.hero-label {
-
-    position: absolute;
-
-    z-index: 5;
-
-    right: 27px;
-
-    bottom: 80px;
-
-    writing-mode: vertical-rl;
-
-    color: rgba(247,223,167,.85);
-
-    font-size: 9px;
-
-    letter-spacing: .4em;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,.8);
-}
-
-
-/* =========================================================
-   SCROLL INDICATOR
-========================================================= */
-
-.scroll {
-
-    position: absolute;
-
-    z-index: 5;
-
-    bottom: 25px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: var(--gold-light);
-
-    font-size: 8px;
-
-    letter-spacing: .3em;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 2px 7px rgba(0,0,0,.9);
-}
-
-.scroll-line {
-
-    width: 1px;
-
-    height: 42px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            var(--gold),
-            transparent
+            }
         );
 
-    animation:
-        scroll 2s infinite;
-}
 
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-.section {
-
-    padding: 140px 7vw;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.section-inner {
-
-    width: min(1250px, 100%);
-
-    margin: auto;
-}
-
-.black-section {
-
-    background: var(--black);
-}
-
-.red-section {
-
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(124,35,45,.25),
-            transparent 35%
-        ),
-        var(--maroon-dark);
-}
-
-
-/* =========================================================
-   SECTION LABEL
-========================================================= */
-
-.section-label {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    color: var(--gold);
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: .3em;
-
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
-}
-
-.section-label::before {
-
-    content: "";
-
-    width: 38px;
-
-    height: 1px;
-
-    background: var(--gold);
-}
-
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
-
-.section-title {
-
-    font-family: var(--serif);
-
-    font-size: clamp(60px, 8vw, 110px);
-
-    font-weight: 500;
-
-    line-height: .8;
-
-    letter-spacing: -.045em;
-}
-
-.section-title em {
-
-    color: var(--gold-light);
-
-    font-style: italic;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-grid {
-
-    display: grid;
-
-    grid-template-columns: .65fr 1.35fr;
-
-    gap: 90px;
-}
-
-.about-number {
-
-    font-family: var(--serif);
-
-    font-size: 190px;
-
-    line-height: .65;
-
-    color: rgba(226,184,102,.08);
-}
-
-.about-content {
-
-    max-width: 750px;
-}
-
-.about-intro {
-
-    margin-top: 55px;
-
-    color: var(--ivory);
-
-    font-family: var(--serif);
-
-    font-size: clamp(28px, 3vw, 43px);
-
-    line-height: 1.15;
-}
-
-.about-intro span {
-    color: var(--gold-light);
-}
-
-.about-text {
-
-    margin-top: 30px;
-
-    max-width: 650px;
-
-    color: var(--muted);
-
-    font-size: 14px;
-
-    line-height: 1.9;
-}
-
-.quote {
-
-    margin-top: 55px;
-
-    padding: 30px 35px;
-
-    border-left:
-        1px solid var(--gold);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(226,184,102,.08),
-            transparent
-        );
-}
-
-.quote p {
-
-    color: var(--gold-light);
-
-    font-family: var(--serif);
-
-    font-size: 28px;
-
-    font-style: italic;
-
-    line-height: 1.2;
-}
-
-
-/* =========================================================
-   PHILOSOPHY
-========================================================= */
-
-.philosophy {
-
-    padding: 120px 7vw;
-
-    text-align: center;
-
-    border-top:
-        1px solid var(--line);
-
-    border-bottom:
-        1px solid var(--line);
-
-    background:
-        linear-gradient(
-            135deg,
-            #3b1015,
-            #100908
-        );
-}
-
-.philosophy-label {
-
-    color: var(--gold);
-
-    font-size: 9px;
-
-    letter-spacing: .35em;
-
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
-}
-
-.philosophy-title {
-
-    font-family: var(--serif);
-
-    font-size: clamp(45px, 6vw, 82px);
-
-    line-height: .95;
-
-    font-weight: 400;
-}
-
-.philosophy-title span {
-
-    color: var(--gold-light);
-
-    font-style: italic;
-}
-
-
-/* =========================================================
-   JOURNEY
-========================================================= */
-
-.journey-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    gap: 50px;
-
-    margin-bottom: 80px;
-}
-
-.journey-description {
-
-    max-width: 350px;
-
-    color: var(--muted);
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-.journey-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    border-top:
-        1px solid var(--line);
-
-    border-bottom:
-        1px solid var(--line);
-}
-
-.journey-card {
-
-    position: relative;
-
-    min-height: 390px;
-
-    padding: 42px 35px;
-
-    border-right:
-        1px solid var(--line);
-
-    overflow: hidden;
-
-    transition:
-        background .4s ease,
-        transform .4s ease;
-}
-
-.journey-card:last-child {
-    border-right: none;
-}
-
-.journey-card:hover {
-
-    background:
-        rgba(226,184,102,.045);
-
-    transform:
-        translateY(-7px);
-}
-
-.journey-number {
-
-    color: var(--gold);
-
-    font-family: var(--serif);
-
-    font-size: 19px;
-
-    margin-bottom: 80px;
-}
-
-.journey-card h3 {
-
-    color: var(--ivory);
-
-    font-family: var(--serif);
-
-    font-size: 42px;
-
-    font-weight: 500;
-
-    line-height: .9;
-
-    margin-bottom: 20px;
-}
-
-.journey-card p {
-
-    max-width: 270px;
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.8;
-}
-
-.journey-word {
-
-    position: absolute;
-
-    bottom: 25px;
-
-    right: 25px;
-
-    color: rgba(226,184,102,.25);
-
-    font-size: 9px;
-
-    letter-spacing: .25em;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   PORTFOLIO
-   FLEXIBLE IMAGE SYSTEM
-========================================================= */
-
-.portfolio-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    gap: 40px;
-
-    margin-bottom: 65px;
-}
-
-.portfolio-description {
-
-    max-width: 370px;
-
-    color: var(--muted);
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-
-/*
-   IMPORTANT:
-
-   No fixed image height.
-   No fixed aspect-ratio.
-
-   Portrait images remain portrait.
-   Landscape images remain landscape.
-   Square images remain square.
-*/
-
-.gallery {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 20px;
-
-    align-items: start;
-}
-
-.gallery-item {
-
-    position: relative;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    background: #110c0a;
-}
-
-.gallery-item img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    max-width: 100%;
-
-    object-fit: contain;
-
-    transition:
-        transform .8s cubic-bezier(.2,.7,.2,1),
-        filter .7s ease;
-}
-
-.gallery-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    padding: 24px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent 45%,
-            rgba(0,0,0,.82)
+        viewerClose.addEventListener(
+            "click",
+            closeViewer
         );
 
-    opacity: 0;
 
-    transition:
-        opacity .4s ease;
-}
+        viewerNext.addEventListener(
+            "click",
+            showNext
+        );
 
-.gallery-number {
 
-    color: var(--gold-light);
+        viewerPrev.addEventListener(
+            "click",
+            showPrevious
+        );
 
-    font-family: var(--serif);
 
-    font-size: 30px;
-}
+        viewer.addEventListener(
+            "click",
+            event => {
 
-.gallery-open {
+                if (
+                    event.target === viewer
+                ) {
+                    closeViewer();
+                }
 
-    color: var(--gold-light);
+            }
+        );
 
-    font-size: 10px;
 
-    letter-spacing: .2em;
+        document.addEventListener(
+            "keydown",
+            event => {
 
-    text-transform: uppercase;
-}
+                if (
+                    !viewer.classList.contains("active")
+                ) {
+                    return;
+                }
 
-.gallery-item:hover img {
+                if (event.key === "Escape") {
+                    closeViewer();
+                }
 
-    transform: scale(1.045);
+                if (event.key === "ArrowRight") {
+                    showNext();
+                }
 
-    filter:
-        brightness(.72)
-        saturate(.9);
-}
+                if (event.key === "ArrowLeft") {
+                    showPrevious();
+                }
 
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
+            }
+        );
 
 
-/* =========================================================
-   STATEMENT
-========================================================= */
+        /* =========================================================
+           SIMPLE HERO PARALLAX
+        ========================================================== */
 
-.statement {
+        const hero =
+            document.querySelector(".hero");
 
-    padding: 160px 7vw;
+        window.addEventListener(
+            "scroll",
+            () => {
 
-    background: var(--black);
+                const scrollY =
+                    window.scrollY;
 
-    text-align: center;
-}
+                if (scrollY <= window.innerHeight) {
 
-.statement-inner {
+                    hero.style.backgroundPosition =
+                        `center ${scrollY * 0.18}px`;
+                }
 
-    max-width: 1000px;
+            },
+            { passive: true }
+        );
 
-    margin: auto;
-}
+    </script>
 
-.statement blockquote {
-
-    color: var(--ivory);
-
-    font-family: var(--serif);
-
-    font-size: clamp(42px, 6vw, 78px);
-
-    font-weight: 400;
-
-    line-height: .95;
-}
-
-.statement blockquote span {
-
-    color: var(--gold-light);
-
-    font-style: italic;
-}
-
-.statement-author {
-
-    margin-top: 35px;
-
-    color: var(--gold);
-
-    font-size: 9px;
-
-    letter-spacing: .35em;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   CONNECT
-========================================================= */
-
-.connect {
-
-    min-height: 75vh;
-
-    display: flex;
-
-    align-items: center;
-}
-
-.connect-grid {
-
-    display: grid;
-
-    grid-template-columns: 1.2fr .8fr;
-
-    gap: 100px;
-
-    align-items: end;
-}
-
-.connect-title {
-
-    font-family: var(--serif);
-
-    font-size: clamp(80px, 11vw, 150px);
-
-    line-height: .7;
-
-    font-weight: 500;
-
-    letter-spacing: -.055em;
-}
-
-.connect-title span {
-
-    display: block;
-
-    margin-left: 9vw;
-
-    color: var(--gold-light);
-}
-
-.connect-copy {
-
-    color: var(--muted);
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
-}
-
-.social {
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-.social a {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 18px 0;
-
-    border-top:
-        1px solid var(--line);
-
-    color: var(--cream);
-
-    font-family: var(--serif);
-
-    font-size: 26px;
-
-    transition:
-        color .3s ease,
-        padding .3s ease;
-}
-
-.social a:last-child {
-
-    border-bottom:
-        1px solid var(--line);
-}
-
-.social a:hover {
-
-    color: var(--gold-light);
-
-    padding-left: 12px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 28px 7vw;
-
-    border-top:
-        1px solid rgba(226,184,102,.15);
-
-    color: #76695c;
-
-    font-size: 9px;
-
-    letter-spacing: .14em;
-
-    text-transform: uppercase;
-}
-
-.footer-star {
-
-    color: var(--gold-dark);
-
-    font-size: 18px;
-}
-
-
-/* =========================================================
-   IMAGE VIEWER
-========================================================= */
-
-.viewer {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 500;
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        rgba(4,2,2,.97);
-
-    backdrop-filter: blur(15px);
-}
-
-.viewer.active {
-    display: flex;
-}
-
-.viewer-image {
-
-    max-width: 88vw;
-
-    max-height: 85vh;
-
-    width: auto;
-
-    height:
-```
+</body>
+</html>
