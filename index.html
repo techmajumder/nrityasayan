@@ -2,601 +2,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-      content="Sayan Majumder — Dancer, performer and learner of the Sabarno Dance style.">
-
-<title>Sayan Majumder | Dance Portfolio</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-:root {
-    --paper: #f5efe5;
-    --ink: #2b1a1d;
-    --muted: #6e5b5e;
-    --accent: #7c3037;
-    --line: #d8cabc;
-    --white: #fffaf3;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.7;
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    position: relative;
-    width: 100%;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    z-index: 10;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 22px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-/* =========================
-   HERO / FIRST PAGE
-========================= */
-
-.hero {
-    min-height: calc(100vh - 76px);
-    max-width: 1200px;
-    margin: auto;
-    padding: 55px 6%;
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 60px;
-    align-items: center;
-
-    /* IMPORTANT:
-       No image and no decorative circle here */
-    background: var(--paper);
-}
-
-/* Completely remove decorative shapes */
-.hero::before,
-.hero::after {
-    display: none !important;
-    content: none !important;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.kicker {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--accent);
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(4rem, 8vw, 7rem);
-    line-height: 0.85;
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-
-.hero p {
-    max-width: 500px;
-    color: var(--muted);
-    font-size: 1rem;
-}
-
-.hero-button {
-    display: inline-block;
-    margin-top: 30px;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 4px;
-    transition: 0.3s;
-}
-
-.hero-button:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-/* =========================
-   IMAGE BOX
-========================= */
-
-.hero-image-area {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*
-   THIS IS THE ONLY PLACE WHERE
-   background1.png IS USED.
-*/
-
-.hero-image-box {
-    width: 100%;
-    max-width: 560px;
-
-    /*
-       Gives the image its own complete box.
-       The image itself will NOT cover the page.
-    */
-    aspect-ratio: 4 / 5;
-
-    background-color: #eee5d8;
-
-    background-image: url('assests/background1.png');
-
-    /*
-       IMPORTANT:
-       contain = entire uploaded image remains visible.
-       Nothing gets cropped.
-    */
-    background-size: contain;
-
-    background-position: center;
-    background-repeat: no-repeat;
-
-    border: 1px solid var(--line);
-    padding: 12px;
-
-    box-shadow: 0 20px 50px rgba(43, 26, 29, 0.12);
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    padding: 110px 8%;
-}
-
-.section-inner {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    font-weight: 500;
-    line-height: 1;
-    margin-bottom: 35px;
-}
-
-.section-subtitle {
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.75rem;
-    margin-bottom: 15px;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about {
-    background: var(--white);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.about-text {
-    color: var(--muted);
-    font-size: 1rem;
-}
-
-.quote {
-    margin-top: 35px;
-    padding-left: 25px;
-    border-left: 2px solid var(--accent);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--ink);
-}
-
-/* =========================
-   TRAINING
-========================= */
-
-.training-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 50px;
-}
-
-.training-card {
-    border-top: 1px solid var(--line);
-    padding-top: 25px;
-}
-
-.training-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.training-card p {
-    color: var(--muted);
-    font-size: 0.9rem;
-}
-
-/* =========================
-   PORTFOLIO
-========================= */
-
-.portfolio {
-    background: var(--white);
-}
-
-.portfolio-button {
-    display: inline-block;
-    margin-bottom: 50px;
-    padding: 12px 25px;
-    border: 1px solid var(--ink);
-    color: var(--ink);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.portfolio-button:hover {
-    background: var(--ink);
-    color: var(--white);
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.gallery-item {
-    height: 400px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-/* =========================
-   CONNECT
-========================= */
-
-.connect {
-    text-align: center;
-}
-
-.social-links {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.social-links a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 4px;
-}
-
-.social-links a:hover {
-    color: var(--accent);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-    padding: 30px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 0.8rem;
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(20, 12, 13, 0.95);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal.active {
-    display: flex;
-}
-
-.modal img {
-    max-width: 85vw;
-    max-height: 80vh;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.modal-close {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-.modal-prev,
-.modal-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
-    user-select: none;
-}
-
-.modal-prev {
-    left: 30px;
-}
-
-.modal-next {
-    right: 30px;
-}
-
-.modal-controls {
-    position: absolute;
-    bottom: 25px;
-    display: flex;
-    gap: 20px;
-}
-
-.modal-controls button {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: all 0.8s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .nav-container {
-        padding: 18px 5%;
-    }
-
-    .nav-links {
-        gap: 15px;
-    }
-
-    .hero {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        padding: 60px 5%;
-        gap: 45px;
-    }
-
-    .hero h1 {
-        font-size: 4.5rem;
-    }
-
-    .hero-image-box {
-        max-width: 100%;
-        aspect-ratio: 4 / 5;
-    }
-
-    section {
-        padding: 80px 6%;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .training-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: 450px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Sayan Majumder — Dancer, performer and learner of the Sabarno Dance style.">
+
+    <title>Sayan Majumder | Dance Portfolio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+        :root {
+            --ink: #2b1a1d;
+            --muted: #6e5c5d;
+            --paper: #f8f3ec;
+            --paper-dark: #eee5d8;
+            --accent: #8d5d5d;
+            --line: rgba(43, 26, 29, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.7;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: relative;
+            width: 100%;
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+            z-index: 10;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* =========================
+           FIRST PAGE / HERO
+        ========================= */
+
+        .hero {
+            min-height: calc(100vh - 76px);
+
+            width: 100%;
+
+            background-image: url('assests/background1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 6%;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .kicker {
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(70px, 10vw, 145px);
+            line-height: 0.82;
+            font-weight: 500;
+            letter-spacing: -4px;
+            margin-bottom: 35px;
+        }
+
+        .hero p {
+            max-width: 500px;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 13px 25px;
+
+            color: var(--ink);
+            border: 1px solid var(--ink);
+            text-decoration: none;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 110px 6%;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(45px, 6vw, 80px);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 40px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: var(--muted);
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        .quote {
+            border-left: 2px solid var(--accent);
+            padding-left: 25px;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            line-height: 1.4;
+        }
+
+        /* =========================
+           TRAINING / JOURNEY
+        ========================= */
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .training-card {
+            border-top: 1px solid var(--line);
+            padding-top: 25px;
+        }
+
+        .training-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .training-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           PORTFOLIO
+        ========================= */
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--paper-dark);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* =========================
+           CONNECT
+        ========================= */
+
+        .connect {
+            text-align: center;
+            border-top: 1px solid var(--line);
+        }
+
+        .connect p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--muted);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .social-links a {
+            color: var(--ink);
+            text-decoration: none;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 5px;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* =========================
+           IMAGE MODAL
+        ========================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(20, 12, 14, 0.94);
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-image {
+            max-width: 85vw;
+            max-height: 85vh;
+
+            object-fit: contain;
+
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+
+            color: white;
+            background: none;
+            border: none;
+
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        .modal-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex;
+            gap: 15px;
+        }
+
+        .modal-controls button {
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid rgba(255,255,255,0.5);
+            background: transparent;
+            color: white;
+
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .modal-controls button:hover {
+            background: white;
+            color: var(--ink);
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            pointer-events: none;
+        }
+
+        .modal-nav button {
+            pointer-events: auto;
+
+            background: none;
+            border: none;
+
+            color: white;
+            font-size: 40px;
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+
+            border-top: 1px solid var(--line);
+
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: calc(100vh - 120px);
+                background-size: cover;
+                background-position: center;
+            }
+
+            .hero-content {
+                padding: 60px 7%;
+            }
+
+            .hero h1 {
+                font-size: clamp(60px, 17vw, 100px);
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 7%;
+            }
+        }
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-<nav>
-    <div class="nav-container">
+    <nav>
+        <div class="nav-container">
 
-        <div class="logo">
-            Sayan Majumder
+            <div class="logo">
+                Sayan Majumder
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         FIRST PAGE
+         background1.png ONLY
+    ========================= -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="kicker">
+                Dancer · Performer · Learner
+            </div>
+
+            <h1>
+                Sayan<br>
+                Majumder
+            </h1>
+
+            <p>
+                A dancer exploring tradition, movement and expression
+                through the Sabarno Dance style.
+            </p>
+
+            <a href="#portfolio" class="hero-button">
+                Enter the gallery →
+            </a>
+
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#journey">Journey</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#connect">Connect</a></li>
-        </ul>
-
-    </div>
-</nav>
+    </header>
 
 
-<!-- =========================
-     FIRST PAGE
-========================= -->
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
-<header class="hero">
+    <section id="about" class="reveal">
 
-    <div class="hero-content">
-
-        <div class="kicker">
-            Dancer · Performer · Learner
+        <div class="section-label">
+            About
         </div>
-
-        <h1>
-            Sayan<br>
-            Majumder
-        </h1>
-
-        <p>
-            A dancer exploring tradition, movement and expression
-            through the Sabarno Dance style.
-        </p>
-
-        <a href="#portfolio" class="hero-button">
-            Enter the gallery →
-        </a>
-
-    </div>
-
-
-    <!-- ONLY THIS BOX CONTAINS background1.png -->
-
-    <div class="hero-image-area">
-
-        <div class="hero-image-box"></div>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="about reveal" id="about">
-
-    <div class="section-inner">
 
         <div class="about-grid">
 
             <div>
-                <div class="section-subtitle">
-                    About
-                </div>
-
                 <h2 class="section-title">
-                    My Dance Journey
+                    My Dance<br>
+                    Journey
                 </h2>
             </div>
 
             <div class="about-text">
 
                 <p>
-                    I have been learning the Sabarno Dance style
-                    under Guru Sri Sabarnik De at Brahma-Kamal
-                    Institute of Dance and Drawing for the past
-                    three years.
+                    I have been learning the Sabarno Dance style under
+                    Guru Sri Sabarnik De at Brahma-Kamal Institute of
+                    Dance and Drawing for the past three years.
+                </p>
+
+                <p>
+                    My practice explores the relationship between
+                    classical Indian movement, expression, rhythm
+                    and contemporary interpretation.
                 </p>
 
                 <div class="quote">
@@ -608,20 +588,16 @@ footer {
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================
-     TRAINING
-========================= -->
+    <!-- =========================
+         JOURNEY
+    ========================= -->
 
-<section class="reveal" id="journey">
+    <section id="journey" class="reveal">
 
-    <div class="section-inner">
-
-        <div class="section-subtitle">
+        <div class="section-label">
             Training
         </div>
 
@@ -632,98 +608,105 @@ footer {
         <div class="training-grid">
 
             <div class="training-card">
-                <h3>Natya Shastra</h3>
+                <h3>
+                    Natya Shastra
+                </h3>
+
                 <p>
-                    Classical Indian principles of expression,
-                    movement and performance.
+                    Exploring classical Indian principles of
+                    expression, movement, gesture and performance.
                 </p>
             </div>
 
+
             <div class="training-card">
-                <h3>Uday Shankar</h3>
+                <h3>
+                    Uday Shankar
+                </h3>
+
                 <p>
-                    Contemporary interpretation of Indian
-                    classical movement and expression.
+                    Learning the expressive and innovative movement
+                    language associated with the Uday Shankar tradition.
                 </p>
             </div>
 
+
             <div class="training-card">
-                <h3>Odissi</h3>
+                <h3>
+                    Odissi
+                </h3>
+
                 <p>
-                    Grace, posture, rhythm and expressive
-                    movement inspired by Odissi tradition.
+                    Understanding the grace, posture, rhythm and
+                    sculptural movement vocabulary of Odissi.
                 </p>
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================
-     PORTFOLIO
-========================= -->
+    <!-- =========================
+         PORTFOLIO
+    ========================= -->
 
-<section class="portfolio reveal" id="portfolio">
+    <section id="portfolio" class="reveal">
 
-    <div class="section-inner">
-
-        <div class="section-subtitle">
+        <div class="section-label">
             Portfolio
         </div>
 
         <h2 class="section-title">
-            Selected Performances
+            Movement<br>
+            in Frames
         </h2>
 
-        <a href="#gallery" class="portfolio-button">
-            Open Portfolio
-        </a>
 
-        <div class="gallery" id="gallery">
+        <div class="portfolio-grid">
 
-            <div class="gallery-item">
-                <img src="assests/Sayan01.jpg" alt="Sayan Majumder dance performance">
+            <div class="portfolio-item">
+                <img src="assests/Sayan01.jpg"
+                     alt="Sayan Majumder performing dance">
             </div>
 
-            <div class="gallery-item">
-                <img src="assests/Sayan3.jpg" alt="Sayan Majumder dance performance">
+            <div class="portfolio-item">
+                <img src="assests/Sayan3.jpg"
+                     alt="Sayan Majumder dance performance">
             </div>
 
-            <div class="gallery-item">
-                <img src="assests/Sayan4.jpg" alt="Sayan Majumder dance performance">
+            <div class="portfolio-item">
+                <img src="assests/Sayan4.jpg"
+                     alt="Sayan Majumder performing">
             </div>
 
-            <div class="gallery-item">
-                <img src="assests/Sayan5.jpg" alt="Sayan Majumder dance performance">
+            <div class="portfolio-item">
+                <img src="assests/Sayan5.jpg"
+                     alt="Sayan Majumder dance">
             </div>
 
-            <div class="gallery-item">
-                <img src="assests/Sayan6.jpg" alt="Sayan Majumder dance performance">
+            <div class="portfolio-item">
+                <img src="assests/Sayan6.jpg"
+                     alt="Sayan Majumder performance">
             </div>
 
-            <div class="gallery-item">
-                <img src="assests/Sayan7.jpg" alt="Sayan Majumder dance performance">
+            <div class="portfolio-item">
+                <img src="assests/Sayan7.jpg"
+                     alt="Sayan Majumder dancer">
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================
-     CONNECT
-========================= -->
+    <!-- =========================
+         CONNECT
+    ========================= -->
 
-<section class="connect reveal" id="connect">
+    <section id="connect" class="connect reveal">
 
-    <div class="section-inner">
-
-        <div class="section-subtitle">
+        <div class="section-label">
             Connect
         </div>
 
@@ -732,7 +715,8 @@ footer {
         </h2>
 
         <p>
-            Follow my dance journey and performances.
+            For performances, collaborations, creative projects
+            and dance-related opportunities.
         </p>
 
         <div class="social-links">
@@ -747,191 +731,267 @@ footer {
 
         </div>
 
+    </section>
+
+
+    <!-- =========================
+         IMAGE MODAL
+    ========================= -->
+
+    <div class="modal" id="imageModal">
+
+        <button class="modal-close" id="modalClose">
+            ×
+        </button>
+
+        <div class="modal-nav">
+
+            <button id="prevBtn">
+                ‹
+            </button>
+
+            <button id="nextBtn">
+                ›
+            </button>
+
+        </div>
+
+        <img class="modal-image"
+             id="modalImage"
+             src=""
+             alt="Dance portfolio image">
+
+        <div class="modal-controls">
+
+            <button id="zoomOut">
+                −
+            </button>
+
+            <button id="resetZoom">
+                1:1
+            </button>
+
+            <button id="zoomIn">
+                +
+            </button>
+
+        </div>
+
     </div>
 
-</section>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+        © 2026 Sayan Majumder · Dance Portfolio
+    </footer>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
-<footer>
-    © 2026 Sayan Majumder · Dance Portfolio
-</footer>
+    <script>
 
+        /* =========================
+           IMAGE MODAL
+        ========================= */
 
-<!-- =========================
-     IMAGE MODAL
-========================= -->
+        const portfolioImages =
+            document.querySelectorAll('.portfolio-item img');
 
-<div class="modal" id="imageModal">
+        const modal =
+            document.getElementById('imageModal');
 
-    <span class="modal-close">&times;</span>
+        const modalImage =
+            document.getElementById('modalImage');
 
-    <span class="modal-prev">&#10094;</span>
+        const modalClose =
+            document.getElementById('modalClose');
 
-    <img id="modalImage" src="" alt="Dance performance">
+        const prevBtn =
+            document.getElementById('prevBtn');
 
-    <span class="modal-next">&#10095;</span>
+        const nextBtn =
+            document.getElementById('nextBtn');
 
-    <div class="modal-controls">
+        const zoomIn =
+            document.getElementById('zoomIn');
 
-        <button id="zoomOut">−</button>
-        <button id="resetZoom">Reset</button>
-        <button id="zoomIn">+</button>
+        const zoomOut =
+            document.getElementById('zoomOut');
 
-    </div>
-
-</div>
-
-
-<script>
-
-/* =========================
-   GALLERY MODAL
-========================= */
-
-const galleryItems = document.querySelectorAll('.gallery-item img');
-const modal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-const closeModal = document.querySelector('.modal-close');
-const prevButton = document.querySelector('.modal-prev');
-const nextButton = document.querySelector('.modal-next');
-
-let currentIndex = 0;
-let zoom = 1;
-
-function showImage(index) {
-
-    if (index < 0) {
-        index = galleryItems.length - 1;
-    }
-
-    if (index >= galleryItems.length) {
-        index = 0;
-    }
-
-    currentIndex = index;
-
-    modalImage.src = galleryItems[currentIndex].src;
-
-    zoom = 1;
-    modalImage.style.transform = `scale(${zoom})`;
-
-    modal.classList.add('active');
-}
-
-galleryItems.forEach((image, index) => {
-
-    image.addEventListener('click', () => {
-        showImage(index);
-    });
-
-});
-
-closeModal.addEventListener('click', () => {
-    modal.classList.remove('active');
-});
-
-prevButton.addEventListener('click', () => {
-    showImage(currentIndex - 1);
-});
-
-nextButton.addEventListener('click', () => {
-    showImage(currentIndex + 1);
-});
+        const resetZoom =
+            document.getElementById('resetZoom');
 
 
-/* =========================
-   ZOOM
-========================= */
-
-document.getElementById('zoomIn').addEventListener('click', () => {
-
-    zoom += 0.2;
-
-    modalImage.style.transform =
-        `scale(${zoom})`;
-
-});
-
-document.getElementById('zoomOut').addEventListener('click', () => {
-
-    zoom = Math.max(0.6, zoom - 0.2);
-
-    modalImage.style.transform =
-        `scale(${zoom})`;
-
-});
-
-document.getElementById('resetZoom').addEventListener('click', () => {
-
-    zoom = 1;
-
-    modalImage.style.transform =
-        `scale(${zoom})`;
-
-});
+        let currentIndex = 0;
+        let zoomLevel = 1;
 
 
-/* =========================
-   KEYBOARD CONTROLS
-========================= */
+        function showImage(index) {
 
-document.addEventListener('keydown', (event) => {
+            if (index < 0) {
+                index = portfolioImages.length - 1;
+            }
 
-    if (!modal.classList.contains('active')) {
-        return;
-    }
+            if (index >= portfolioImages.length) {
+                index = 0;
+            }
 
-    if (event.key === 'Escape') {
-        modal.classList.remove('active');
-    }
+            currentIndex = index;
 
-    if (event.key === 'ArrowLeft') {
-        showImage(currentIndex - 1);
-    }
+            modalImage.src =
+                portfolioImages[currentIndex].src;
 
-    if (event.key === 'ArrowRight') {
-        showImage(currentIndex + 1);
-    }
+            modalImage.alt =
+                portfolioImages[currentIndex].alt;
 
-});
+            zoomLevel = 1;
+
+            modalImage.style.transform =
+                'scale(1)';
+        }
 
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+        function openModal(index) {
 
-const revealElements =
-    document.querySelectorAll('.reveal');
+            showImage(index);
 
-const observer =
-    new IntersectionObserver(
-        entries => {
+            modal.classList.add('active');
 
-            entries.forEach(entry => {
+            document.body.style.overflow = 'hidden';
+        }
 
-                if (entry.isIntersecting) {
 
-                    entry.target.classList.add('visible');
+        function closeModal() {
 
-                }
+            modal.classList.remove('active');
 
+            document.body.style.overflow = '';
+        }
+
+
+        portfolioImages.forEach((image, index) => {
+
+            image.parentElement.addEventListener('click', () => {
+                openModal(index);
             });
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+        });
 
-revealElements.forEach(element => {
-    observer.observe(element);
-});
 
-</script>
+        modalClose.addEventListener('click', closeModal);
+
+
+        prevBtn.addEventListener('click', () => {
+            showImage(currentIndex - 1);
+        });
+
+
+        nextBtn.addEventListener('click', () => {
+            showImage(currentIndex + 1);
+        });
+
+
+        zoomIn.addEventListener('click', () => {
+
+            zoomLevel += 0.2;
+
+            modalImage.style.transform =
+                `scale(${zoomLevel})`;
+
+        });
+
+
+        zoomOut.addEventListener('click', () => {
+
+            zoomLevel = Math.max(0.4, zoomLevel - 0.2);
+
+            modalImage.style.transform =
+                `scale(${zoomLevel})`;
+
+        });
+
+
+        resetZoom.addEventListener('click', () => {
+
+            zoomLevel = 1;
+
+            modalImage.style.transform =
+                'scale(1)';
+
+        });
+
+
+        modal.addEventListener('click', (event) => {
+
+            if (event.target === modal) {
+                closeModal();
+            }
+
+        });
+
+
+        document.addEventListener('keydown', (event) => {
+
+            if (!modal.classList.contains('active')) {
+                return;
+            }
+
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+
+            if (event.key === 'ArrowLeft') {
+                showImage(currentIndex - 1);
+            }
+
+            if (event.key === 'ArrowRight') {
+                showImage(currentIndex + 1);
+            }
+
+        });
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const revealElements =
+            document.querySelectorAll('.reveal');
+
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add('visible');
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach((element) => {
+            observer.observe(element);
+        });
+
+    </script>
 
 </body>
 </html>
