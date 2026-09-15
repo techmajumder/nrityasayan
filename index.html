@@ -1,1327 +1,1417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Sayan Majumder — Dancer, performer and learner of the Sabarno Dance style."
-    >
-
-    <title>Sayan Majumder | Dance Portfolio</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Italianno&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-
-        /* =========================================================
-           RESET
-        ========================================================= */
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Sayan Majumder — Dancer, performer and learner of the Sabarno Dance style.">
+
+<title>Sayan Majumder | Dance Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Italianno&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0706;
+    color: #f4e6cf;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            background: #100b09;
-            color: #f4e9d5;
-            font-family: "DM Sans", sans-serif;
-            overflow-x: hidden;
-        }
+/* =========================================================
+   COLORS
+========================================================= */
 
-        img {
-            max-width: 100%;
-        }
+:root {
+    --cream: #f4e6cf;
+    --gold: #f4d28c;
+    --soft-gold: #cda85b;
+    --maroon: #4b0f18;
+    --deep-maroon: #25070d;
+    --black: #0b0706;
+    --muted: #b8a58d;
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
 
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-        /* =========================================================
-           SCROLL PROGRESS
-        ========================================================= */
+.section {
+    position: relative;
+    padding: 130px 7vw;
+}
 
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: #d9a84e;
-            z-index: 9999;
-        }
+.section-inner {
+    width: min(1200px, 100%);
+    margin: auto;
+}
 
+.section-label {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
 
-        /* =========================================================
-           NAVIGATION
-        ========================================================= */
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: .95;
+    font-weight: 400;
+    color: var(--cream);
+}
 
-        .nav {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 50;
+.section-title span {
+    color: var(--gold);
+}
 
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+.body-text {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 300;
+}
 
-            padding: 32px 5vw;
 
-            background: transparent;
-        }
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 42px;
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
 
-            list-style: none;
-        }
+    display: flex;
+    justify-content: flex-end;
 
-        .nav-links a {
-            position: relative;
+    padding: 32px 5vw;
 
-            color: #f4d28c;
+    background: transparent;
+}
 
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: .2em;
-            text-transform: uppercase;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 42px;
 
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, .9),
-                0 0 12px rgba(0, 0, 0, .5);
+    list-style: none;
+}
 
-            transition:
-                color .3s ease,
-                transform .3s ease;
-        }
+.nav-links a {
+    position: relative;
 
-        .nav-links a::after {
-            content: "";
+    color: #f4d28c;
 
-            position: absolute;
-            left: 0;
-            bottom: -7px;
+    font-size: 11px;
+    font-weight: 600;
 
-            width: 0;
-            height: 1px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
 
-            background: #f4d28c;
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.9),
+        0 0 12px rgba(0,0,0,.5);
 
-            transition: width .3s ease;
-        }
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
 
-        .nav-links a:hover {
-            color: #fff2c7;
-            transform: translateY(-2px);
-        }
+.nav-links a::after {
+    content: "";
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+    position: absolute;
+    left: 0;
+    bottom: -8px;
 
+    width: 0;
+    height: 1px;
 
-        /* =========================================================
-           HERO
-        ========================================================= */
+    background: var(--gold);
 
-        .hero {
-            position: relative;
+    transition: width .3s ease;
+}
 
-            width: 100%;
-            height: 100vh;
-            height: 100svh;
+.nav-links a:hover {
+    color: #fff1c8;
+    transform: translateY(-2px);
+}
 
-            min-height: 650px;
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-            overflow: hidden;
 
-            background-image: url("assests/background1.png");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
+/* =========================================================
+   HERO
+========================================================= */
 
-        .hero::after {
-            content: "";
+.hero {
+    position: relative;
 
-            position: absolute;
-            inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(0, 0, 0, .15),
-                    rgba(0, 0, 0, .08) 55%,
-                    rgba(10, 5, 3, .65)
-                );
+    min-height: 650px;
 
-            pointer-events: none;
-        }
+    overflow: hidden;
 
-        .hero-content {
-            position: relative;
-            z-index: 5;
+    background-image: url("assests/background1.png");
 
-            width: min(900px, 90%);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 
-            min-height: 100%;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+/* Dark cinematic overlay */
 
-            padding-top: 70px;
-        }
+.hero::after {
+    content: "";
 
-        .hero-inner {
-            margin-left: 8vw;
-            max-width: 700px;
-        }
+    position: absolute;
+    inset: 0;
 
-        .eyebrow {
-            margin-bottom: 18px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.55) 0%,
+            rgba(0,0,0,.12) 55%,
+            rgba(0,0,0,.35) 100%
+        );
 
-            color: #f1c77b;
+    pointer-events: none;
+}
 
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .28em;
-            text-transform: uppercase;
 
-            text-shadow:
-                0 2px 7px rgba(0, 0, 0, .9);
-        }
+/* Hero content */
 
-        .hero-title {
-            font-family: "Cormorant Garamond", serif;
+.hero-content {
+    position: absolute;
 
-            font-size: clamp(70px, 10vw, 145px);
-            font-weight: 500;
+    z-index: 5;
 
-            line-height: .78;
+    left: 8vw;
+    bottom: 14vh;
 
-            color: #f5e4bd;
+    max-width: 760px;
+}
 
-            text-shadow:
-                0 4px 14px rgba(0, 0, 0, .85),
-                0 0 30px rgba(0, 0, 0, .35);
-        }
+.hero-kicker {
+    color: var(--gold);
 
-        .hero-script {
-            margin-top: 15px;
-            margin-left: 8px;
+    font-size: 11px;
+    font-weight: 600;
 
-            font-family: "Italianno", cursive;
+    letter-spacing: .38em;
+    text-transform: uppercase;
 
-            font-size: clamp(40px, 5vw, 70px);
+    margin-bottom: 18px;
 
-            color: #e1ad52;
+    text-shadow: 0 2px 8px rgba(0,0,0,.8);
+}
 
-            text-shadow:
-                0 3px 8px rgba(0, 0, 0, .8);
-        }
+.hero-title {
+    font-family: "Cormorant Garamond", serif;
 
-        .hero-description {
-            max-width: 480px;
+    font-size: clamp(70px, 12vw, 170px);
 
-            margin-top: 28px;
+    line-height: .78;
 
-            color: #f4ead8;
+    font-weight: 400;
 
-            font-size: 15px;
-            line-height: 1.8;
-            font-weight: 300;
+    color: #f7ead4;
 
-            text-shadow:
-                0 2px 8px rgba(0, 0, 0, .9);
-        }
+    text-shadow:
+        0 5px 25px rgba(0,0,0,.65);
+}
 
-        .hero-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+.hero-description {
+    max-width: 510px;
 
-            margin-top: 35px;
+    margin-top: 30px;
 
-            padding: 13px 22px;
+    color: #eadbc2;
 
-            border: 1px solid rgba(244, 210, 140, .7);
+    font-size: 15px;
+    line-height: 1.8;
 
-            color: #f6d88f;
+    font-weight: 300;
 
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: .18em;
-            text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0,0,0,.8);
+}
 
-            background: rgba(0, 0, 0, .18);
+.hero-button {
+    display: inline-flex;
 
-            transition:
-                background .3s ease,
-                color .3s ease,
-                transform .3s ease;
-        }
+    margin-top: 35px;
 
-        .hero-button:hover {
-            background: #d9a84e;
-            color: #170d08;
-            transform: translateY(-3px);
-        }
+    padding: 14px 25px;
 
-        .hero-side-label {
-            position: absolute;
+    border: 1px solid rgba(244,210,140,.7);
 
-            left: 25px;
-            bottom: 80px;
+    color: var(--gold);
 
-            z-index: 10;
+    font-size: 10px;
+    font-weight: 600;
 
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
+    letter-spacing: .25em;
+    text-transform: uppercase;
 
-            color: #e6c889;
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
 
-            font-size: 9px;
-            font-weight: 600;
-            letter-spacing: .3em;
-            text-transform: uppercase;
+.hero-button:hover {
+    background: var(--gold);
+    color: var(--black);
 
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, .9);
-        }
+    transform: translateY(-3px);
+}
 
-        .scroll-indicator {
-            position: absolute;
 
-            right: 5vw;
-            bottom: 40px;
+/* Vertical text */
 
-            z-index: 10;
+.hero-side-label {
+    position: absolute;
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+    z-index: 5;
 
-            color: #f1d596;
+    right: 3vw;
+    bottom: 13vh;
 
-            font-size: 9px;
-            letter-spacing: .25em;
-            text-transform: uppercase;
+    writing-mode: vertical-rl;
 
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, .9);
-        }
+    color: rgba(244,210,140,.75);
 
-        .scroll-line {
-            width: 1px;
-            height: 55px;
+    font-size: 9px;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+}
 
-            background: #e4bf72;
 
-            animation: scrollPulse 2s infinite;
-        }
+/* Scroll indicator */
 
-        @keyframes scrollPulse {
-            0%,
-            100% {
-                opacity: .35;
-                transform: scaleY(.75);
-                transform-origin: top;
-            }
+.scroll-indicator {
+    position: absolute;
 
-            50% {
-                opacity: 1;
-                transform: scaleY(1);
-            }
-        }
+    z-index: 5;
 
+    bottom: 35px;
+    left: 50%;
 
-        /* =========================================================
-           GENERAL SECTIONS
-        ========================================================= */
+    transform: translateX(-50%);
 
-        section {
-            position: relative;
-            padding: 120px 8vw;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        .section-label {
-            margin-bottom: 18px;
+    gap: 10px;
+}
 
-            color: #c89a45;
+.scroll-indicator span {
+    color: var(--gold);
 
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: .3em;
-            text-transform: uppercase;
-        }
+    font-size: 8px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+}
 
-        .section-title {
-            max-width: 850px;
+.scroll-line {
+    width: 1px;
+    height: 45px;
 
-            font-family: "Cormorant Garamond", serif;
+    background: linear-gradient(
+        to bottom,
+        var(--gold),
+        transparent
+    );
 
-            font-size: clamp(48px, 6vw, 85px);
-            line-height: .95;
+    animation: scrollLine 2s infinite;
+}
 
-            font-weight: 500;
+@keyframes scrollLine {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
 
-            color: #f2dfba;
-        }
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
 
-        .section-title span {
-            color: #c99840;
-        }
+    51% {
+        transform-origin: bottom;
+    }
 
-        .body-text {
-            max-width: 720px;
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
 
-            margin-top: 30px;
 
-            color: #cfc1ac;
+/* =========================================================
+   ABOUT
+========================================================= */
 
-            font-size: 16px;
-            line-height: 1.9;
-            font-weight: 300;
-        }
+.about {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(95,24,37,.25),
+            transparent 30%
+        ),
+        #0b0706;
+}
 
+.about-grid {
+    display: grid;
 
-        /* =========================================================
-           ABOUT
-        ========================================================= */
+    grid-template-columns:
+        minmax(280px, .8fr)
+        minmax(300px, 1.2fr);
 
-        .about {
-            background:
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(112, 42, 25, .18),
-                    transparent 35%
-                ),
-                #120b09;
-        }
+    gap: 100px;
 
-        .about-grid {
-            display: grid;
+    align-items: center;
+}
 
-            grid-template-columns:
-                minmax(280px, .9fr)
-                minmax(300px, 1.1fr);
+.about-content {
+    max-width: 620px;
+}
 
-            gap: 90px;
+.about-content .body-text {
+    margin-top: 35px;
+}
 
-            align-items: center;
-        }
+.quote {
+    position: relative;
 
-        .about-highlight {
-            margin-top: 40px;
+    margin-top: 45px;
 
-            padding-left: 25px;
+    padding-left: 25px;
 
-            border-left: 1px solid #b9883c;
+    border-left: 1px solid var(--gold);
 
-            color: #e3c895;
+    color: var(--cream);
 
-            font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", serif;
 
-            font-size: 24px;
-            line-height: 1.4;
-        }
+    font-size: 25px;
+    line-height: 1.4;
+}
 
+.quote span {
+    display: block;
 
-        /* =========================================================
-           PHILOSOPHY
-        ========================================================= */
+    margin-top: 12px;
 
-        .philosophy {
-            min-height: 500px;
+    color: var(--gold);
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    font-family: "DM Sans", sans-serif;
 
-            text-align: center;
+    font-size: 9px;
+    letter-spacing: .25em;
 
-            background:
-                linear-gradient(
-                    rgba(32, 10, 7, .82),
-                    rgba(32, 10, 7, .92)
-                ),
-                radial-gradient(
-                    circle at center,
-                    #6f2a1b,
-                    #160907 65%
-                );
-        }
+    text-transform: uppercase;
+}
 
-        .philosophy-inner {
-            max-width: 900px;
-        }
 
-        .philosophy-quote {
-            margin-top: 25px;
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
 
-            font-family: "Cormorant Garamond", serif;
+.philosophy {
+    min-height: 520px;
 
-            font-size: clamp(42px, 6vw, 78px);
-            line-height: 1.05;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            color: #f1ddaf;
-        }
+    text-align: center;
 
-        .philosophy-small {
-            margin-top: 30px;
+    background:
+        linear-gradient(
+            rgba(35,5,12,.8),
+            rgba(35,5,12,.8)
+        ),
+        radial-gradient(
+            circle at center,
+            rgba(143,43,58,.3),
+            transparent 60%
+        ),
+        #25070d;
+}
 
-            color: #cba85e;
+.philosophy-inner {
+    max-width: 900px;
+}
 
-            font-size: 10px;
-            letter-spacing: .3em;
-            text-transform: uppercase;
-        }
+.philosophy-mark {
+    color: var(--gold);
 
+    font-family: "Italianno", cursive;
 
-        /* =========================================================
-           JOURNEY
-        ========================================================= */
+    font-size: 70px;
 
-        .journey {
-            background: #100a08;
-        }
+    line-height: .5;
 
-        .journey-header {
-            margin-bottom: 70px;
-        }
+    margin-bottom: 35px;
+}
 
-        .journey-grid {
-            display: grid;
+.philosophy-text {
+    color: var(--cream);
 
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+    font-family: "Cormorant Garamond", serif;
 
-            gap: 25px;
-        }
+    font-size: clamp(38px, 5vw, 70px);
 
-        .journey-card {
-            position: relative;
+    line-height: 1;
 
-            min-height: 350px;
+    font-weight: 300;
+}
 
-            padding: 40px 35px;
+.philosophy-text em {
+    color: var(--gold);
+    font-style: italic;
+}
 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
 
-            border: 1px solid rgba(190, 145, 68, .25);
+/* =========================================================
+   JOURNEY
+========================================================= */
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(83, 28, 17, .45),
-                    rgba(17, 8, 6, .8)
-                );
+.journey {
+    background: #0b0706;
+}
 
-            overflow: hidden;
+.journey-intro {
+    max-width: 650px;
+    margin-top: 30px;
+}
 
-            transition:
-                transform .4s ease,
-                border-color .4s ease;
-        }
+.journey-grid {
+    display: grid;
 
-        .journey-card::before {
-            content: "";
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-            position: absolute;
+    gap: 20px;
 
-            top: -100px;
-            right: -100px;
+    margin-top: 70px;
+}
 
-            width: 220px;
-            height: 220px;
+.journey-card {
+    position: relative;
 
-            border: 1px solid rgba(205, 157, 74, .15);
+    min-height: 300px;
 
-            border-radius: 50%;
-        }
+    padding: 35px;
 
-        .journey-card:hover {
-            transform: translateY(-8px);
+    border: 1px solid rgba(244,210,140,.16);
 
-            border-color: rgba(210, 166, 81, .7);
-        }
+    background:
+        linear-gradient(
+            145deg,
+            rgba(76,15,25,.65),
+            rgba(16,10,8,.8)
+        );
 
-        .journey-number {
-            position: absolute;
+    transition:
+        transform .4s ease,
+        border-color .4s ease;
+}
 
-            top: 25px;
-            right: 30px;
+.journey-card:hover {
+    transform: translateY(-8px);
 
-            color: #a87530;
+    border-color: rgba(244,210,140,.55);
+}
 
-            font-family: "Cormorant Garamond", serif;
+.journey-number {
+    color: var(--gold);
 
-            font-size: 25px;
-        }
+    font-size: 10px;
+    letter-spacing: .3em;
 
-        .journey-card h3 {
-            margin-bottom: 15px;
+    margin-bottom: 50px;
+}
 
-            font-family: "Cormorant Garamond", serif;
+.journey-card h3 {
+    color: var(--cream);
 
-            font-size: 38px;
-            font-weight: 500;
+    font-family: "Cormorant Garamond", serif;
 
-            color: #e9d4a7;
-        }
+    font-size: 34px;
+    font-weight: 400;
 
-        .journey-card p {
-            color: #bcae99;
+    margin-bottom: 18px;
+}
 
-            font-size: 14px;
-            line-height: 1.7;
-        }
+.journey-card p {
+    color: var(--muted);
 
+    font-size: 13px;
+    line-height: 1.8;
 
-        /* =========================================================
-           PORTFOLIO
-        ========================================================= */
+    font-weight: 300;
+}
 
-        .portfolio {
-            background:
-                linear-gradient(
-                    to bottom,
-                    #100a08,
-                    #160907
-                );
-        }
 
-        .portfolio-header {
-            margin-bottom: 65px;
-        }
+/* =========================================================
+   PORTFOLIO
+========================================================= */
 
-        /*
-           IMPORTANT:
-           Images keep their original portrait/landscape ratio.
-           No fixed height is applied.
-        */
+.portfolio {
+    background:
+        linear-gradient(
+            180deg,
+            #0b0706 0%,
+            #16090b 100%
+        );
+}
 
-        .gallery {
-            display: grid;
+.portfolio-heading {
+    display: flex;
 
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+    justify-content: space-between;
+    align-items: flex-end;
 
-            gap: 20px;
+    gap: 40px;
 
-            align-items: start;
-        }
+    margin-bottom: 60px;
+}
 
-        .gallery-item {
-            position: relative;
+.portfolio-description {
+    max-width: 400px;
 
-            width: 100%;
+    color: var(--muted);
 
-            overflow: hidden;
+    font-size: 13px;
+    line-height: 1.8;
+}
 
-            cursor: pointer;
 
-            background: #110c0a;
-        }
+/* =========================================================
+   GALLERY
+========================================================= */
 
-        .gallery-item img {
-            display: block;
+.gallery {
+    display: grid;
 
-            width: 100%;
-            height: auto;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-            max-width: 100%;
+    gap: 18px;
 
-            object-fit: contain;
+    width: 100%;
+}
 
-            transition:
-                transform .8s cubic-bezier(.2, .7, .2, 1),
-                filter .7s ease;
-        }
+.gallery-item {
+    position: relative;
 
-        .gallery-item:hover img {
-            transform: scale(1.04);
+    width: 100%;
 
-            filter:
-                brightness(1.05)
-                saturate(1.08);
-        }
+    /*
+       Every thumbnail has the same square shape.
+       Portrait / landscape / square source images
+       therefore cannot change the grid layout.
+    */
 
-        .gallery-overlay {
-            position: absolute;
+    aspect-ratio: 1 / 1;
 
-            inset: 0;
+    overflow: hidden;
 
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
+    cursor: pointer;
 
-            padding: 20px;
+    background: #110c0a;
+}
 
-            background:
-                linear-gradient(
-                    to top,
-                    rgba(8, 4, 3, .75),
-                    transparent 45%
-                );
+.gallery-item img {
+    display: block;
 
-            opacity: 0;
+    width: 100%;
+    height: 100%;
 
-            transition: opacity .4s ease;
-        }
+    max-width: none;
 
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
+    /*
+       Thumbnail uses crop, not distortion.
+       The original image remains available in
+       the fullscreen viewer.
+    */
 
-        .gallery-number {
-            color: #f1d18a;
+    object-fit: cover;
+    object-position: center center;
 
-            font-size: 10px;
-            letter-spacing: .2em;
-        }
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .7s ease;
+}
 
-        .gallery-view {
-            color: #f4e2b7;
+.gallery-item:hover img {
+    transform: scale(1.06);
 
-            font-size: 10px;
-            letter-spacing: .2em;
-            text-transform: uppercase;
-        }
+    filter: brightness(.72);
+}
 
 
-        /* =========================================================
-           STATEMENT
-        ========================================================= */
+/* Gallery overlay */
 
-        .statement {
-            padding-top: 150px;
-            padding-bottom: 150px;
+.gallery-overlay {
+    position: absolute;
 
-            background: #120a08;
+    inset: 0;
 
-            text-align: center;
-        }
+    display: flex;
 
-        .statement-inner {
-            max-width: 900px;
-            margin: auto;
-        }
+    flex-direction: column;
 
-        .statement-text {
-            margin-top: 25px;
+    align-items: center;
+    justify-content: center;
 
-            font-family: "Cormorant Garamond", serif;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.6)
+        );
 
-            font-size: clamp(38px, 5vw, 68px);
+    opacity: 0;
 
-            line-height: 1.05;
+    transition: opacity .4s ease;
+}
 
-            color: #e6d0a0;
-        }
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
 
+.gallery-overlay span {
+    color: var(--gold);
 
-        /* =========================================================
-           CONNECT
-        ========================================================= */
+    font-size: 10px;
 
-        .connect {
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(105, 39, 23, .3),
-                    transparent 60%
-                ),
-                #100907;
+    letter-spacing: .3em;
 
-            text-align: center;
-        }
+    text-transform: uppercase;
+}
 
-        .connect-inner {
-            max-width: 750px;
-            margin: auto;
-        }
+.gallery-number {
+    position: absolute;
 
-        .connect-text {
-            margin-top: 25px;
+    left: 18px;
+    bottom: 15px;
 
-            color: #bcae99;
+    color: rgba(255,255,255,.8);
 
-            line-height: 1.8;
-        }
+    font-size: 9px;
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+    letter-spacing: .2em;
+}
 
-            margin-top: 45px;
 
-            flex-wrap: wrap;
-        }
+/* =========================================================
+   STATEMENT
+========================================================= */
 
-        .social-link {
-            padding: 14px 25px;
+.statement {
+    padding: 150px 7vw;
 
-            border: 1px solid rgba(201, 155, 70, .5);
+    background: #0b0706;
 
-            color: #dcbf82;
+    text-align: center;
+}
 
-            font-size: 10px;
-            font-weight: 600;
+.statement-inner {
+    max-width: 950px;
+    margin: auto;
+}
 
-            letter-spacing: .2em;
-            text-transform: uppercase;
+.statement p {
+    color: var(--cream);
 
-            transition:
-                background .3s ease,
-                color .3s ease,
-                transform .3s ease;
-        }
+    font-family: "Cormorant Garamond", serif;
 
-        .social-link:hover {
-            background: #c89842;
-            color: #180c07;
+    font-size: clamp(36px, 5vw, 68px);
 
-            transform: translateY(-3px);
-        }
+    line-height: 1.05;
 
+    font-weight: 300;
+}
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
+.statement p span {
+    color: var(--gold);
+}
 
-        footer {
-            padding: 30px 8vw;
 
-            border-top: 1px solid rgba(201, 155, 70, .15);
+/* =========================================================
+   CONNECT
+========================================================= */
 
-            background: #0b0706;
+.connect {
+    background:
+        linear-gradient(
+            135deg,
+            #25070d,
+            #0b0706
+        );
 
-            text-align: center;
+    text-align: center;
+}
 
-            color: #806f5d;
+.connect-inner {
+    max-width: 800px;
+    margin: auto;
+}
 
-            font-size: 10px;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-        }
+.connect-description {
+    max-width: 600px;
 
+    margin: 30px auto 0;
+}
 
-        /* =========================================================
-           IMAGE VIEWER / LIGHTBOX
-        ========================================================= */
+.social-links {
+    display: flex;
 
-        .viewer {
-            position: fixed;
+    justify-content: center;
 
-            inset: 0;
+    gap: 18px;
 
-            z-index: 9990;
+    flex-wrap: wrap;
 
-            display: none;
+    margin-top: 45px;
+}
 
-            align-items: center;
-            justify-content: center;
+.social-link {
+    display: inline-flex;
 
-            padding: 40px;
+    align-items: center;
+    justify-content: center;
 
-            background:
-                rgba(5, 3, 2, .96);
+    min-width: 150px;
 
-            backdrop-filter: blur(10px);
-        }
+    padding: 15px 25px;
 
-        .viewer.active {
-            display: flex;
-        }
+    border: 1px solid rgba(244,210,140,.35);
 
-        .viewer-image {
-            max-width: 90vw;
-            max-height: 88vh;
+    color: var(--gold);
 
-            width: auto;
-            height: auto;
+    font-size: 10px;
 
-            object-fit: contain;
+    letter-spacing: .25em;
 
-            box-shadow:
-                0 25px 80px rgba(0, 0, 0, .65);
-        }
+    text-transform: uppercase;
 
-        .viewer-close,
-        .viewer-prev,
-        .viewer-next {
-            position: absolute;
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
 
-            z-index: 5;
+.social-link:hover {
+    background: var(--gold);
 
-            border: none;
+    color: var(--black);
 
-            background: transparent;
+    transform: translateY(-3px);
+}
 
-            color: #f0d28f;
 
-            cursor: pointer;
+/* =========================================================
+   FOOTER
+========================================================= */
 
-            transition:
-                color .25s ease,
-                transform .25s ease;
-        }
+footer {
+    padding: 30px 7vw;
 
-        .viewer-close {
-            top: 25px;
-            right: 30px;
+    border-top: 1px solid rgba(244,210,140,.1);
 
-            font-size: 30px;
+    background: #080504;
 
-            line-height: 1;
-        }
+    text-align: center;
+}
 
-        .viewer-prev,
-        .viewer-next {
-            top: 50%;
+footer p {
+    color: #786a5a;
 
-            transform: translateY(-50%);
+    font-size: 9px;
 
-            font-size: 35px;
+    letter-spacing: .2em;
 
-            padding: 20px;
-        }
+    text-transform: uppercase;
+}
 
-        .viewer-prev {
-            left: 15px;
-        }
 
-        .viewer-next {
-            right: 15px;
-        }
+/* =========================================================
+   FULLSCREEN IMAGE VIEWER
+========================================================= */
 
-        .viewer-close:hover,
-        .viewer-prev:hover,
-        .viewer-next:hover {
-            color: #fff4d4;
-        }
+.lightbox {
+    position: fixed;
 
-        .viewer-prev:hover {
-            transform: translate(-5px, -50%);
-        }
+    inset: 0;
 
-        .viewer-next:hover {
-            transform: translate(5px, -50%);
-        }
+    z-index: 100;
 
-        .viewer-counter {
-            position: absolute;
+    display: none;
 
-            left: 50%;
-            bottom: 25px;
+    align-items: center;
+    justify-content: center;
 
-            transform: translateX(-50%);
+    padding: 30px;
 
-            color: #caa75f;
+    background:
+        rgba(5,3,2,.96);
+}
 
-            font-size: 10px;
-            letter-spacing: .25em;
-        }
+.lightbox.active {
+    display: flex;
+}
 
+.lightbox-image {
+    /*
+       IMPORTANT:
+       Natural image proportions are preserved here.
+       The source image is NOT cropped.
+    */
 
-        /* =========================================================
-           REVEAL ANIMATION
-        ========================================================= */
+    display: block;
 
-        .reveal {
-            opacity: 0;
+    width: auto;
+    height: auto;
 
-            transform: translateY(35px);
+    max-width: 90vw;
+    max-height: 88vh;
 
-            transition:
-                opacity .9s ease,
-                transform .9s cubic-bezier(.2, .7, .2, 1);
-        }
+    object-fit: contain;
 
-        .reveal.visible {
-            opacity: 1;
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.65);
+}
 
-            transform: translateY(0);
-        }
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
 
+    z-index: 105;
 
-        /* =========================================================
-           TABLET
-        ========================================================= */
+    border: 0;
 
-        @media (max-width: 900px) {
+    background: transparent;
 
-            .nav {
-                padding: 25px 5vw;
-            }
+    color: var(--gold);
 
-            .nav-links {
-                gap: 25px;
-            }
+    cursor: pointer;
 
-            .hero-inner {
-                margin-left: 7vw;
-            }
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
 
-            .about-grid {
-                grid-template-columns: 1fr;
+.lightbox-close {
+    top: 25px;
+    right: 35px;
 
-                gap: 55px;
-            }
+    font-size: 30px;
+}
 
-            .journey-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+.lightbox-prev {
+    left: 25px;
 
-            .gallery {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+    font-size: 42px;
+}
 
-            section {
-                padding: 100px 7vw;
-            }
-        }
+.lightbox-next {
+    right: 25px;
 
+    font-size: 42px;
+}
 
-        /* =========================================================
-           MOBILE
-        ========================================================= */
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: #fff;
 
-        @media (max-width: 600px) {
+    transform: scale(1.12);
+}
 
-            .nav {
-                justify-content: center;
+.lightbox-counter {
+    position: absolute;
 
-                padding: 22px 15px;
-            }
+    bottom: 25px;
+    left: 50%;
 
-            .nav-links {
-                gap: 17px;
-            }
+    transform: translateX(-50%);
 
-            .nav-links a {
-                font-size: 8px;
-                letter-spacing: .12em;
-            }
+    color: rgba(244,210,140,.8);
 
-            .hero {
-                min-height: 620px;
+    font-size: 10px;
 
-                background-position: center center;
-            }
+    letter-spacing: .25em;
+}
 
-            .hero-content {
-                width: 100%;
 
-                padding-top: 90px;
-            }
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
 
-            .hero-inner {
-                margin-left: 8vw;
-                margin-right: 8vw;
-            }
+.reveal {
+    opacity: 0;
 
-            .hero-title {
-                font-size: clamp(58px, 17vw, 90px);
-            }
+    transform: translateY(35px);
 
-            .hero-script {
-                font-size: 45px;
-            }
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
 
-            .hero-description {
-                max-width: 90%;
+.reveal.visible {
+    opacity: 1;
 
-                font-size: 13px;
-            }
+    transform: translateY(0);
+}
 
-            .hero-side-label {
-                display: none;
-            }
 
-            .scroll-indicator {
-                right: 25px;
-            }
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
 
-            section {
-                padding: 80px 7vw;
-            }
+@media (max-width: 900px) {
 
-            .section-title {
-                font-size: 48px;
-            }
+    .nav {
+        padding: 25px 5vw;
+    }
 
-            .journey-grid {
-                grid-template-columns: 1fr;
-            }
+    .nav-links {
+        gap: 25px;
+    }
 
-            /*
-               Mobile gallery:
-               one column, natural image height.
-            */
+    .about-grid {
+        grid-template-columns: 1fr;
 
-            .gallery {
-                grid-template-columns: 1fr;
+        gap: 55px;
+    }
 
-                gap: 18px;
-            }
+    .journey-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 
-            .gallery-overlay {
-                opacity: 1;
-            }
+    .gallery {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-            .statement {
-                padding-top: 100px;
-                padding-bottom: 100px;
-            }
+        gap: 15px;
+    }
 
-            .viewer {
-                padding: 20px;
-            }
+    .portfolio-heading {
+        align-items: flex-start;
 
-            .viewer-image {
-                max-width: 92vw;
-                max-height: 82vh;
-            }
+        flex-direction: column;
+    }
 
-            .viewer-prev,
-            .viewer-next {
-                font-size: 25px;
+}
 
-                padding: 10px;
-            }
 
-            .viewer-prev {
-                left: 2px;
-            }
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 
-            .viewer-next {
-                right: 2px;
-            }
-        }
+@media (max-width: 600px) {
 
-    </style>
+    .section {
+        padding: 90px 6vw;
+    }
+
+
+    /* Navigation */
+
+    .nav {
+        justify-content: center;
+
+        padding: 22px 4vw;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 8px;
+
+        letter-spacing: .14em;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 620px;
+
+        background-position: center center;
+    }
+
+    .hero-content {
+        left: 7vw;
+        right: 7vw;
+
+        bottom: 12vh;
+    }
+
+    .hero-kicker {
+        font-size: 8px;
+
+        letter-spacing: .25em;
+    }
+
+    .hero-title {
+        font-size: clamp(62px, 19vw, 105px);
+    }
+
+    .hero-description {
+        font-size: 13px;
+
+        max-width: 400px;
+    }
+
+    .hero-side-label {
+        display: none;
+    }
+
+
+    /* Journey */
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 45px;
+    }
+
+    .journey-card {
+        min-height: 250px;
+
+        padding: 28px;
+    }
+
+
+    /* Gallery */
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .gallery-overlay {
+        opacity: 1;
+    }
+
+
+    /* Connect */
+
+    .social-links {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .social-link {
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+
+    /* Lightbox */
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox-image {
+        max-width: 94vw;
+        max-height: 82vh;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
-    <!-- =========================================================
-         SCROLL PROGRESS
-    ========================================================= -->
 
-    <div class="scroll-progress" id="scrollProgress"></div>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
+<nav class="nav">
 
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
+    <ul class="nav-links">
 
-    <header class="hero" id="home">
+        <li>
+            <a href="#about">About</a>
+        </li>
 
-        <!-- Transparent Navigation -->
-        <nav class="nav">
+        <li>
+            <a href="#journey">Journey</a>
+        </li>
 
-            <ul class="nav-links">
+        <li>
+            <a href="#portfolio">Portfolio</a>
+        </li>
 
-                <li>
-                    <a href="#about">About</a>
-                </li>
+        <li>
+            <a href="#connect">Connect</a>
+        </li>
 
-                <li>
-                    <a href="#journey">Journey</a>
-                </li>
+    </ul>
 
-                <li>
-                    <a href="#portfolio">Portfolio</a>
-                </li>
-
-                <li>
-                    <a href="#connect">Connect</a>
-                </li>
-
-            </ul>
-
-        </nav>
+</nav>
 
 
-        <!-- Hero Content -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-        <div class="hero-content">
+<header class="hero" id="home">
 
-            <div class="hero-inner">
+    <div class="hero-content">
 
-                <div class="eyebrow">
-                    Dancer · Performer · Learner
-                </div>
-
-                <h1 class="hero-title">
-                    Sayan
-                </h1>
-
-                <div class="hero-script">
-                    Majumder
-                </div>
-
-                <p class="hero-description">
-                    Exploring movement, rhythm and expression
-                    through the Sabarno Dance style.
-                </p>
-
-                <a href="#about" class="hero-button">
-                    Explore My Journey
-                    <span>→</span>
-                </a>
-
-            </div>
-
+        <div class="hero-kicker">
+            Dancer · Performer · Learner
         </div>
 
+        <h1 class="hero-title">
+            Sayan<br>
+            Majumder
+        </h1>
 
-        <div class="hero-side-label">
-            Dance · Expression · Movement
-        </div>
+        <p class="hero-description">
+            Exploring movement, rhythm and expression
+            through the Sabarno Dance style.
+        </p>
 
+        <a href="#about" class="hero-button">
+            Explore My Journey
+        </a>
 
-        <div class="scroll-indicator">
-
-            <span>Scroll</span>
-
-            <div class="scroll-line"></div>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================================================
-         ABOUT
-    ========================================================= -->
-
-    <section class="about" id="about">
-
-        <div class="about-grid">
-
-            <div class="reveal">
-
-                <div class="section-label">
-                    01 · About
-                </div>
-
-                <h2 class="section-title">
-                    My Dance
-                    <span>Journey</span>
-                </h2>
-
-            </div>
+    </div>
 
 
-            <div class="reveal">
-
-                <p class="body-text">
-                    I have been learning the Sabarno Dance style
-                    under Guru Sri Sabarnik De at Brahma-Kamal
-                    Institute of Dance and Drawing.
-                </p>
-
-                <p class="body-text">
-                    My practice explores classical Indian movement,
-                    expression, rhythm and contemporary interpretation.
-                    Through dance, I continue to discover new ways
-                    of communicating emotion and storytelling.
-                </p>
-
-                <div class="about-highlight">
-                    "Sabarno Dance style is a fusion of Natya Shastra,
-                    Uday Shankar style and Odissi."
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    <div class="hero-side-label">
+        Movement · Rhythm · Expression
+    </div>
 
 
-    <!-- =========================================================
-         PHILOSOPHY
-    ========================================================= -->
+    <div class="scroll-indicator">
 
-    <section class="philosophy">
+        <span>Scroll</span>
 
-        <div class="philosophy-inner reveal">
+        <div class="scroll-line"></div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="section about" id="about">
+
+    <div class="section-inner about-grid">
+
+        <div class="reveal">
 
             <div class="section-label">
-                Philosophy
-            </div>
-
-            <div class="philosophy-quote">
-                Movement becomes meaning
-                when expression becomes honest.
-            </div>
-
-            <div class="philosophy-small">
-                Rhythm · Expression · Story
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         JOURNEY
-    ========================================================= -->
-
-    <section class="journey" id="journey">
-
-        <div class="journey-header reveal">
-
-            <div class="section-label">
-                02 · Journey
+                About
             </div>
 
             <h2 class="section-title">
-                Foundations of
-                <span>Movement</span>
+                My Dance<br>
+                <span>Journey</span>
             </h2>
+
+        </div>
+
+
+        <div class="about-content reveal">
+
+            <p class="body-text">
+
+                I have been learning the Sabarno Dance style
+                under Guru Sri Sabarnik De at Brahma-Kamal
+                Institute of Dance and Drawing.
+
+            </p>
+
+            <p class="body-text" style="margin-top:20px;">
+
+                My practice explores classical Indian movement,
+                expression, rhythm and contemporary interpretation,
+                allowing different influences to come together
+                through movement.
+
+            </p>
+
+
+            <div class="quote">
+
+                “Sabarno Dance style is a fusion of
+                Natya Shastra, Uday Shankar style and Odissi.”
+
+                <span>
+                    Sabarno Dance Style
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PHILOSOPHY
+===================================================== -->
+
+<section class="philosophy">
+
+    <div class="philosophy-inner reveal">
+
+        <div class="philosophy-mark">
+            “
+        </div>
+
+        <p class="philosophy-text">
+
+            Movement becomes meaning
+            when <em>expression</em>
+            becomes honest.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JOURNEY
+===================================================== -->
+
+<section class="section journey" id="journey">
+
+    <div class="section-inner">
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Foundations
+            </div>
+
+            <h2 class="section-title">
+                The Influences<br>
+                <span>Behind Movement</span>
+            </h2>
+
+            <p class="body-text journey-intro">
+
+                My learning is shaped by multiple traditions
+                and approaches to Indian movement, rhythm,
+                expression and stage presence.
+
+            </p>
 
         </div>
 
 
         <div class="journey-grid">
 
+
             <article class="journey-card reveal">
 
                 <div class="journey-number">
-                    01
+                    01 — FOUNDATION
                 </div>
 
                 <h3>
@@ -1329,9 +1419,9 @@
                 </h3>
 
                 <p>
-                    Exploring the foundations of Indian performing
-                    arts through expression, gesture, movement,
-                    rhythm and storytelling.
+                    Exploring the principles of Indian
+                    performance, expression, gesture,
+                    movement and dramatic communication.
                 </p>
 
             </article>
@@ -1340,7 +1430,7 @@
             <article class="journey-card reveal">
 
                 <div class="journey-number">
-                    02
+                    02 — EXPRESSION
                 </div>
 
                 <h3>
@@ -1348,9 +1438,9 @@
                 </h3>
 
                 <p>
-                    Learning from an approach that brings together
-                    classical influences with creative movement
-                    and individual expression.
+                    Discovering a modern approach to Indian
+                    dance through expressive movement,
+                    visual composition and physical storytelling.
                 </p>
 
             </article>
@@ -1359,7 +1449,7 @@
             <article class="journey-card reveal">
 
                 <div class="journey-number">
-                    03
+                    03 — RHYTHM
                 </div>
 
                 <h3>
@@ -1367,772 +1457,781 @@
                 </h3>
 
                 <p>
-                    Discovering the grace, posture, rhythm and
-                    expressive vocabulary associated with
-                    the Odissi tradition.
+                    Learning from the grace, posture,
+                    rhythm and expressive vocabulary
+                    associated with the Odissi tradition.
                 </p>
 
             </article>
 
-        </div>
 
-    </section>
-
-
-    <!-- =========================================================
-         PORTFOLIO
-    ========================================================= -->
-
-    <section class="portfolio" id="portfolio">
-
-        <div class="portfolio-header reveal">
-
-            <div class="section-label">
-                03 · Portfolio
-            </div>
-
-            <h2 class="section-title">
-                Moments in
-                <span>Motion</span>
-            </h2>
-
-            <p class="body-text">
-                A collection of performances, practice and
-                moments from my journey through dance.
-            </p>
-
-        </div>
-
-
-        <!-- =====================================================
-             GALLERY — 11 IMAGES
-        ===================================================== -->
-
-        <div class="gallery">
-
-            <!-- 01 -->
-            <div
-                class="gallery-item reveal"
-                data-index="0"
-            >
-                <img
-                    src="assests/Sayan01.jpg"
-                    alt="Sayan Majumder dance performance — 01"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">01</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 02 -->
-            <div
-                class="gallery-item reveal"
-                data-index="1"
-            >
-                <img
-                    src="assests/Sayan3.jpg"
-                    alt="Sayan Majumder dance performance — 02"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">02</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 03 -->
-            <div
-                class="gallery-item reveal"
-                data-index="2"
-            >
-                <img
-                    src="assests/Sayan4.jpg"
-                    alt="Sayan Majumder dance performance — 03"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">03</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 04 -->
-            <div
-                class="gallery-item reveal"
-                data-index="3"
-            >
-                <img
-                    src="assests/Sayan5.jpg"
-                    alt="Sayan Majumder dance performance — 04"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">04</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 05 -->
-            <div
-                class="gallery-item reveal"
-                data-index="4"
-            >
-                <img
-                    src="assests/Sayan6.jpg"
-                    alt="Sayan Majumder dance performance — 05"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">05</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 06 -->
-            <div
-                class="gallery-item reveal"
-                data-index="5"
-            >
-                <img
-                    src="assests/Sayan7.jpg"
-                    alt="Sayan Majumder dance performance — 06"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">06</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 07 -->
-            <div
-                class="gallery-item reveal"
-                data-index="6"
-            >
-                <img
-                    src="assests/3a.jpg"
-                    alt="Sayan Majumder dance performance — 07"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">07</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 08 -->
-            <div
-                class="gallery-item reveal"
-                data-index="7"
-            >
-                <img
-                    src="assests/Birvadra.jpeg"
-                    alt="Sayan Majumder dance performance — 08"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">08</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 09 -->
-            <div
-                class="gallery-item reveal"
-                data-index="8"
-            >
-                <img
-                    src="assests/Mahisasur.jpeg"
-                    alt="Sayan Majumder dance performance — 09"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">09</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 10 -->
-            <div
-                class="gallery-item reveal"
-                data-index="9"
-            >
-                <img
-                    src="assests/durga.jpeg"
-                    alt="Sayan Majumder dance performance — 10"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">10</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-
-            <!-- 11 -->
-            <div
-                class="gallery-item reveal"
-                data-index="10"
-            >
-                <img
-                    src="assests/ok.jpeg"
-                    alt="Sayan Majumder dance performance — 11"
-                >
-
-                <div class="gallery-overlay">
-                    <span class="gallery-number">11</span>
-                    <span class="gallery-view">View</span>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         STATEMENT
-    ========================================================= -->
-
-    <section class="statement">
-
-        <div class="statement-inner reveal">
-
-            <div class="section-label">
-                Expression
-            </div>
-
-            <div class="statement-text">
-                Dance is not only movement.
-                It is the language through which
-                emotion becomes visible.
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         CONNECT
-    ========================================================= -->
-
-    <section class="connect" id="connect">
-
-        <div class="connect-inner reveal">
-
-            <div class="section-label">
-                04 · Connect
-            </div>
-
-            <h2 class="section-title">
-                Let's stay
-                <span>connected.</span>
-            </h2>
-
-            <p class="connect-text">
-                Follow my journey, performances and creative work.
-            </p>
-
-            <div class="social-links">
-
-                <!-- Replace # with your actual Instagram URL -->
-                <a
-                    href="#"
-                    class="social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Instagram
-                </a>
-
-                <!-- Replace # with your actual Facebook URL -->
-                <a
-                    href="#"
-                    class="social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Facebook
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
-
-    <footer>
-        © 2026 Sayan Majumder · Dance Portfolio
-    </footer>
-
-
-    <!-- =========================================================
-         FULL SCREEN IMAGE VIEWER
-    ========================================================= -->
-
-    <div
-        class="viewer"
-        id="viewer"
-        aria-hidden="true"
-    >
-
-        <button
-            class="viewer-close"
-            id="viewerClose"
-            aria-label="Close image viewer"
-        >
-            ×
-        </button>
-
-
-        <button
-            class="viewer-prev"
-            id="viewerPrev"
-            aria-label="Previous image"
-        >
-            ‹
-        </button>
-
-
-        <img
-            class="viewer-image"
-            id="viewerImage"
-            src=""
-            alt=""
-        >
-
-
-        <button
-            class="viewer-next"
-            id="viewerNext"
-            aria-label="Next image"
-        >
-            ›
-        </button>
-
-
-        <!-- Automatically displays 01 / 11 -->
-        <div
-            class="viewer-counter"
-            id="viewerCounter"
-        >
-            01 / 11
         </div>
 
     </div>
 
+</section>
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
 
-    <script>
+<!-- =====================================================
+     PORTFOLIO
+===================================================== -->
 
-        /* =========================================================
-           SCROLL PROGRESS
-        ========================================================= */
+<section class="section portfolio" id="portfolio">
 
-        const scrollProgress =
-            document.getElementById("scrollProgress");
+    <div class="section-inner">
 
-        function updateScrollProgress() {
 
-            const scrollTop =
-                window.scrollY;
+        <div class="portfolio-heading reveal">
 
-            const documentHeight =
-                document.documentElement.scrollHeight
-                - window.innerHeight;
+            <div>
 
-            const percentage =
-                documentHeight > 0
-                    ? (scrollTop / documentHeight) * 100
-                    : 0;
+                <div class="section-label">
+                    Portfolio
+                </div>
 
-            scrollProgress.style.width =
-                percentage + "%";
+                <h2 class="section-title">
+                    Moments<br>
+                    <span>in Movement</span>
+                </h2>
+
+            </div>
+
+
+            <p class="portfolio-description">
+
+                A collection of performances,
+                characters and moments from my
+                journey through dance.
+
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             GALLERY
+        ================================================= -->
+
+        <div class="gallery">
+
+
+            <!-- 01 -->
+
+            <div class="gallery-item reveal"
+                 data-index="0">
+
+                <img
+                    src="assests/Sayan01.jpg"
+                    alt="Sayan Majumder dance performance 01"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        01
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="gallery-item reveal"
+                 data-index="1">
+
+                <img
+                    src="assests/Sayan3.jpg"
+                    alt="Sayan Majumder dance performance 02"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        02
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="gallery-item reveal"
+                 data-index="2">
+
+                <img
+                    src="assests/Sayan4.jpg"
+                    alt="Sayan Majumder dance performance 03"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        03
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="gallery-item reveal"
+                 data-index="3">
+
+                <img
+                    src="assests/Sayan5.jpg"
+                    alt="Sayan Majumder dance performance 04"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        04
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="gallery-item reveal"
+                 data-index="4">
+
+                <img
+                    src="assests/Sayan6.jpg"
+                    alt="Sayan Majumder dance performance 05"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        05
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="gallery-item reveal"
+                 data-index="5">
+
+                <img
+                    src="assests/Sayan7.jpg"
+                    alt="Sayan Majumder dance performance 06"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        06
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 07 -->
+
+            <div class="gallery-item reveal"
+                 data-index="6">
+
+                <img
+                    src="assests/3a.jpg"
+                    alt="Sayan Majumder dance performance 07"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        07
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 08 -->
+
+            <div class="gallery-item reveal"
+                 data-index="7">
+
+                <img
+                    src="assests/Birvadra.jpeg"
+                    alt="Sayan Majumder dance performance 08"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        08
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 09 -->
+
+            <div class="gallery-item reveal"
+                 data-index="8">
+
+                <img
+                    src="assests/Mahisasur.jpeg"
+                    alt="Sayan Majumder dance performance 09"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        09
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 10 -->
+
+            <div class="gallery-item reveal"
+                 data-index="9">
+
+                <img
+                    src="assests/durga.jpeg"
+                    alt="Sayan Majumder dance performance 10"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        10
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 11 -->
+
+            <div class="gallery-item reveal"
+                 data-index="10">
+
+                <img
+                    src="assests/ok.jpeg"
+                    alt="Sayan Majumder dance performance 11"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <span>
+                        View Image
+                    </span>
+
+                    <div class="gallery-number">
+                        11
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATEMENT
+===================================================== -->
+
+<section class="statement">
+
+    <div class="statement-inner reveal">
+
+        <p>
+            Dance is not only movement.
+            It is the language through which
+            <span>emotion becomes visible.</span>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONNECT
+===================================================== -->
+
+<section class="section connect" id="connect">
+
+    <div class="connect-inner reveal">
+
+        <div class="section-label">
+            Connect
+        </div>
+
+        <h2 class="section-title">
+            Let's Stay<br>
+            <span>Connected</span>
+        </h2>
+
+        <p class="body-text connect-description">
+
+            For performances, collaborations,
+            creative projects or simply to follow
+            my journey through dance.
+
+        </p>
+
+
+        <div class="social-links">
+
+            <!-- Replace # with your actual profile links -->
+
+            <a
+                href="#"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+
+            <a
+                href="#"
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Facebook
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        © 2026 Sayan Majumder · Dance Portfolio
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     FULLSCREEN IMAGE VIEWER
+===================================================== -->
+
+<div class="lightbox"
+     id="lightbox"
+     aria-hidden="true">
+
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close image viewer"
+    >
+        ×
+    </button>
+
+
+    <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous image"
+    >
+        ‹
+    </button>
+
+
+    <img
+        class="lightbox-image"
+        id="lightboxImage"
+        src=""
+        alt=""
+    >
+
+
+    <button
+        class="lightbox-next"
+        id="lightboxNext"
+        aria-label="Next image"
+    >
+        ›
+    </button>
+
+
+    <div
+        class="lightbox-counter"
+        id="lightboxCounter"
+    >
+        01 / 11
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   GALLERY / LIGHTBOX
+========================================================= */
+
+const galleryItems =
+    Array.from(document.querySelectorAll(".gallery-item"));
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const lightboxCounter =
+    document.getElementById("lightboxCounter");
+
+const lightboxClose =
+    document.getElementById("lightboxClose");
+
+const lightboxPrev =
+    document.getElementById("lightboxPrev");
+
+const lightboxNext =
+    document.getElementById("lightboxNext");
+
+
+let currentIndex = 0;
+
+
+/* Open image */
+
+function openLightbox(index) {
+
+    if (!galleryItems.length) return;
+
+    currentIndex =
+        (index + galleryItems.length) %
+        galleryItems.length;
+
+    const image =
+        galleryItems[currentIndex].querySelector("img");
+
+    if (!image) return;
+
+    /*
+       Use the original image source.
+       Therefore the fullscreen viewer does NOT
+       use the square thumbnail crop.
+    */
+
+    lightboxImage.src = image.src;
+
+    lightboxImage.alt = image.alt || "Dance photograph";
+
+    lightboxCounter.textContent =
+        `${String(currentIndex + 1).padStart(2, "0")} / ${String(galleryItems.length).padStart(2, "0")}`;
+
+    lightbox.classList.add("active");
+
+    lightbox.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* Close image */
+
+function closeLightbox() {
+
+    lightbox.classList.remove("active");
+
+    lightbox.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    /*
+       Clearing the source prevents unnecessary
+       image memory usage after closing.
+    */
+
+    setTimeout(() => {
+
+        if (!lightbox.classList.contains("active")) {
+            lightboxImage.src = "";
         }
 
-        window.addEventListener(
-            "scroll",
-            updateScrollProgress,
-            { passive: true }
-        );
-
-        updateScrollProgress();
+    }, 250);
+}
 
 
-        /* =========================================================
-           REVEAL ANIMATION
-        ========================================================= */
+/* Previous */
 
-        const revealElements =
-            document.querySelectorAll(".reveal");
+function previousImage() {
 
-        const revealObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
+    openLightbox(currentIndex - 1);
 
-                    entries.forEach(entry => {
+}
 
-                        if (entry.isIntersecting) {
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
+/* Next */
 
-                            observer.unobserve(
-                                entry.target
-                            );
-                        }
+function nextImage() {
 
-                    });
+    openLightbox(currentIndex + 1);
 
-                },
-                {
-                    threshold: 0.12
+}
+
+
+/* Click gallery items */
+
+galleryItems.forEach((item, index) => {
+
+    item.addEventListener("click", () => {
+
+        openLightbox(index);
+
+    });
+
+});
+
+
+/* Buttons */
+
+lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+);
+
+lightboxPrev.addEventListener(
+    "click",
+    previousImage
+);
+
+lightboxNext.addEventListener(
+    "click",
+    nextImage
+);
+
+
+/* Click outside image */
+
+lightbox.addEventListener("click", (event) => {
+
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+
+/* Keyboard controls */
+
+document.addEventListener("keydown", (event) => {
+
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+
+        closeLightbox();
+
+    }
+
+    if (event.key === "ArrowLeft") {
+
+        previousImage();
+
+    }
+
+    if (event.key === "ArrowRight") {
+
+        nextImage();
+
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
                 }
-            );
-
-        revealElements.forEach(element => {
-
-            revealObserver.observe(element);
-
-        });
-
-
-        /* =========================================================
-           HERO PARALLAX
-        ========================================================= */
-
-        const hero =
-            document.querySelector(".hero");
-
-        window.addEventListener(
-            "scroll",
-            () => {
-
-                if (!hero) return;
-
-                const scroll =
-                    window.scrollY;
-
-                if (scroll <= window.innerHeight) {
-
-                    hero.style.backgroundPosition =
-                        `center ${scroll * 0.35}px`;
-                }
-
-            },
-            { passive: true }
-        );
-
-
-        /* =========================================================
-           IMAGE VIEWER
-           
-           IMPORTANT:
-           The script collects images directly from the gallery
-           in DOM order.
-
-           Therefore:
-           - 11 images = 01 / 11
-           - 12 images = 01 / 12
-           - 20 images = 01 / 20
-
-           You don't need to manually update the counter.
-        ========================================================= */
-
-        const viewer =
-            document.getElementById("viewer");
-
-        const viewerImage =
-            document.getElementById("viewerImage");
-
-        const viewerCounter =
-            document.getElementById("viewerCounter");
-
-        const viewerClose =
-            document.getElementById("viewerClose");
-
-        const viewerPrev =
-            document.getElementById("viewerPrev");
-
-        const viewerNext =
-            document.getElementById("viewerNext");
-
-
-        const galleryImages =
-            Array.from(
-                document.querySelectorAll(
-                    ".gallery-item img"
-                )
-            ).filter(image => {
-
-                return image.getAttribute("src");
 
             });
 
+        },
 
-        let currentImageIndex = 0;
-
-
-        /* =========================================================
-           UPDATE VIEWER
-        ========================================================= */
-
-        function updateViewer() {
-
-            if (!galleryImages.length) {
-                return;
-            }
-
-            const image =
-                galleryImages[currentImageIndex];
-
-            const imageSource =
-                image.getAttribute("src");
-
-            const imageAlt =
-                image.getAttribute("alt") || "Dance photograph";
-
-
-            viewerImage.src =
-                imageSource;
-
-            viewerImage.alt =
-                imageAlt;
-
-
-            const currentNumber =
-                String(currentImageIndex + 1)
-                    .padStart(2, "0");
-
-            const totalNumber =
-                String(galleryImages.length)
-                    .padStart(2, "0");
-
-
-            viewerCounter.textContent =
-                `${currentNumber} / ${totalNumber}`;
+        {
+            threshold: 0.12
         }
 
+    );
 
-        /* =========================================================
-           OPEN VIEWER
-        ========================================================= */
 
-        function openViewer(index) {
+revealElements.forEach(element => {
 
-            if (!galleryImages.length) {
-                return;
-            }
+    revealObserver.observe(element);
 
-            currentImageIndex =
-                Math.max(
-                    0,
-                    Math.min(
-                        index,
-                        galleryImages.length - 1
-                    )
-                );
+});
 
-            updateViewer();
 
-            viewer.classList.add("active");
+/* =========================================================
+   HERO PARALLAX
+========================================================= */
 
-            viewer.setAttribute(
-                "aria-hidden",
-                "false"
-            );
+const hero =
+    document.querySelector(".hero");
 
-            document.body.style.overflow =
-                "hidden";
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (!hero) return;
+
+        const scrollY =
+            window.scrollY;
+
+        /*
+           Keep the parallax subtle.
+           It stops when the hero is mostly out
+           of the viewport.
+        */
+
+        if (scrollY < window.innerHeight) {
+
+            hero.style.backgroundPosition =
+                `center calc(50% + ${scrollY * 0.12}px)`;
+
         }
 
-
-        /* =========================================================
-           CLOSE VIEWER
-        ========================================================= */
-
-        function closeViewer() {
-
-            viewer.classList.remove(
-                "active"
-            );
-
-            viewer.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-            document.body.style.overflow =
-                "";
-        }
+    },
+    {
+        passive: true
+    }
+);
 
 
-        /* =========================================================
-           NEXT IMAGE
-        ========================================================= */
+/* =========================================================
+   IMAGE ERROR HANDLING
+========================================================= */
 
-        function nextImage() {
+document.querySelectorAll(".gallery img").forEach(image => {
 
-            if (!galleryImages.length) {
-                return;
-            }
+    image.addEventListener("error", () => {
 
-            currentImageIndex =
-                (currentImageIndex + 1)
-                % galleryImages.length;
-
-            updateViewer();
-        }
-
-
-        /* =========================================================
-           PREVIOUS IMAGE
-        ========================================================= */
-
-        function previousImage() {
-
-            if (!galleryImages.length) {
-                return;
-            }
-
-            currentImageIndex =
-                (
-                    currentImageIndex
-                    - 1
-                    + galleryImages.length
-                )
-                % galleryImages.length;
-
-            updateViewer();
-        }
-
-
-        /* =========================================================
-           CLICK GALLERY IMAGES
-        ========================================================= */
-
-        galleryImages.forEach(
-            (image, index) => {
-
-                image.closest(
-                    ".gallery-item"
-                ).addEventListener(
-                    "click",
-                    () => {
-
-                        openViewer(index);
-
-                    }
-                );
-
-            }
+        console.warn(
+            "Image could not be loaded:",
+            image.getAttribute("src")
         );
 
+    });
 
-        /* =========================================================
-           VIEWER BUTTONS
-        ========================================================= */
-
-        viewerClose.addEventListener(
-            "click",
-            closeViewer
-        );
-
-        viewerNext.addEventListener(
-            "click",
-            nextImage
-        );
-
-        viewerPrev.addEventListener(
-            "click",
-            previousImage
-        );
+});
 
 
-        /* =========================================================
-           CLICK OUTSIDE IMAGE TO CLOSE
-        ========================================================= */
-
-        viewer.addEventListener(
-            "click",
-            event => {
-
-                if (
-                    event.target === viewer
-                ) {
-
-                    closeViewer();
-
-                }
-
-            }
-        );
-
-
-        /* =========================================================
-           KEYBOARD CONTROLS
-        ========================================================= */
-
-        document.addEventListener(
-            "keydown",
-            event => {
-
-                if (
-                    !viewer.classList.contains(
-                        "active"
-                    )
-                ) {
-
-                    return;
-
-                }
-
-
-                if (event.key === "Escape") {
-
-                    closeViewer();
-
-                }
-
-
-                if (event.key === "ArrowRight") {
-
-                    nextImage();
-
-                }
-
-
-                if (event.key === "ArrowLeft") {
-
-                    previousImage();
-
-                }
-
-            }
-        );
-
-    </script>
+</script>
 
 </body>
 </html>
