@@ -60,55 +60,18 @@
            Transparent — sits ON TOP of background
         ========================================= */
 
-        nav {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+       <nav>
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+    </div>
+</nav>
 
-            background: transparent;
-            border-bottom: 1px solid rgba(43, 26, 29, 0.18);
-
-            z-index: 10;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px 6%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--ink);
-            text-decoration: none;
-
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
+And rep
 
         /* =========================================
            HERO CONTENT
