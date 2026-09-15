@@ -109,8 +109,7 @@ img {
 /* =========================================================
    FIRST PAGE / HERO
 
-   IMPORTANT:
-   background1.png IS THE WHOLE FIRST VIEWPORT.
+   background1.png IS THE COMPLETE FIRST VIEWPORT.
 ========================================================= */
 
 .hero {
@@ -124,11 +123,6 @@ img {
     min-height: 650px;
 
     overflow: hidden;
-
-    /*
-       THIS IS THE ONLY BACKGROUND
-       OF THE FIRST PAGE.
-    */
 
     background-image: url("assests/background1.png");
 
@@ -144,7 +138,7 @@ img {
    NAVIGATION
 
    TRANSPARENT.
-   IT SITS DIRECTLY OVER background1.png.
+   SITS DIRECTLY OVER background1.png.
 ========================================================= */
 
 .nav {
@@ -232,10 +226,9 @@ img {
 
 
 /* =========================================================
-   HERO DARK EDGE ONLY
+   HERO READABILITY LAYER
 
-   This does NOT replace the background.
-   It only improves text readability.
+   Does not replace the background image.
 ========================================================= */
 
 .hero-vignette {
@@ -276,7 +269,9 @@ img {
 }
 
 
-/* small heading */
+/* =========================================================
+   HERO OVERLINE
+========================================================= */
 
 .hero-overline {
 
@@ -335,11 +330,11 @@ img {
     text-shadow:
         0 5px 25px rgba(0,0,0,.7);
 
-    animation: entrance 1.2s ease both;
+    animation:
+        entrance 1.2s ease both;
 }
 
 .hero-name span {
-
     display: block;
 }
 
@@ -384,6 +379,7 @@ img {
 .hero-description {
 
     width: 340px;
+
     max-width: 85vw;
 
     margin-top: 25px;
@@ -453,7 +449,7 @@ img {
 
 
 /* =========================================================
-   VERTICAL ARTISTIC LABEL
+   VERTICAL LABEL
 ========================================================= */
 
 .hero-label {
@@ -530,7 +526,8 @@ img {
             transparent
         );
 
-    animation: scroll 2s infinite;
+    animation:
+        scroll 2s infinite;
 }
 
 
@@ -676,7 +673,6 @@ img {
 }
 
 .about-intro span {
-
     color: var(--gold-light);
 }
 
@@ -841,7 +837,6 @@ img {
 }
 
 .journey-card:last-child {
-
     border-right: none;
 }
 
@@ -850,7 +845,8 @@ img {
     background:
         rgba(226,184,102,.045);
 
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 }
 
 .journey-number {
@@ -910,6 +906,7 @@ img {
 
 /* =========================================================
    PORTFOLIO
+   FLEXIBLE IMAGE SYSTEM
 ========================================================= */
 
 .portfolio-top {
@@ -937,24 +934,34 @@ img {
 }
 
 
-/* =========================================================
-   ARTISTIC GALLERY
-========================================================= */
+/*
+   IMPORTANT:
+
+   No fixed image height.
+   No fixed aspect-ratio.
+
+   Portrait images remain portrait.
+   Landscape images remain landscape.
+   Square images remain square.
+*/
 
 .gallery {
 
-    columns: 3 280px;
+    display: grid;
 
-    column-gap: 18px;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    align-items: start;
 }
 
 .gallery-item {
 
     position: relative;
 
-    break-inside: avoid;
-
-    margin-bottom: 18px;
+    width: 100%;
 
     overflow: hidden;
 
@@ -965,9 +972,15 @@ img {
 
 .gallery-item img {
 
+    display: block;
+
     width: 100%;
 
     height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
 
     transition:
         transform .8s cubic-bezier(.2,.7,.2,1),
@@ -982,7 +995,7 @@ img {
 
     display: flex;
 
-    align-items: end;
+    align-items: flex-end;
 
     justify-content: space-between;
 
@@ -990,13 +1003,15 @@ img {
 
     background:
         linear-gradient(
+            to bottom,
             transparent 45%,
-            rgba(0,0,0,.8)
+            rgba(0,0,0,.82)
         );
 
     opacity: 0;
 
-    transition: opacity .4s ease;
+    transition:
+        opacity .4s ease;
 }
 
 .gallery-number {
@@ -1021,21 +1036,20 @@ img {
 
 .gallery-item:hover img {
 
-    transform: scale(1.06);
+    transform: scale(1.045);
 
     filter:
-        brightness(.7)
-        saturate(.85);
+        brightness(.72)
+        saturate(.9);
 }
 
 .gallery-item:hover .gallery-overlay {
-
     opacity: 1;
 }
 
 
 /* =========================================================
-   LARGE STATEMENT
+   STATEMENT
 ========================================================= */
 
 .statement {
@@ -1225,7 +1239,7 @@ footer {
 
 
 /* =========================================================
-   FULLSCREEN IMAGE VIEWER
+   IMAGE VIEWER
 ========================================================= */
 
 .viewer {
@@ -1249,7 +1263,6 @@ footer {
 }
 
 .viewer.active {
-
     display: flex;
 }
 
@@ -1259,1488 +1272,7 @@ footer {
 
     max-height: 85vh;
 
-    object-fit: contain;
+    width: auto;
 
-    transition:
-        transform .3s ease;
-}
-
-.viewer-close,
-.viewer-prev,
-.viewer-next {
-
-    position: absolute;
-
-    width: 50px;
-
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border:
-        1px solid rgba(226,184,102,.4);
-
-    border-radius: 50%;
-
-    background:
-        rgba(0,0,0,.45);
-
-    color: var(--gold-light);
-
-    cursor: pointer;
-
-    transition:
-        background .3s ease,
-        color .3s ease;
-}
-
-.viewer-close {
-
-    top: 25px;
-
-    right: 30px;
-
-    font-size: 25px;
-}
-
-.viewer-prev {
-
-    left: 25px;
-
-    top: 50%;
-
-    font-size: 30px;
-}
-
-.viewer-next {
-
-    right: 25px;
-
-    top: 50%;
-
-    font-size: 30px;
-}
-
-.viewer-close:hover,
-.viewer-prev:hover,
-.viewer-next:hover {
-
-    background: var(--gold);
-
-    color: var(--black);
-}
-
-.viewer-caption {
-
-    position: absolute;
-
-    bottom: 25px;
-
-    color: var(--gold-light);
-
-    font-size: 9px;
-
-    letter-spacing: .3em;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-.reveal {
-
-    opacity: 0;
-
-    transform: translateY(35px);
-
-    transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.7,.2,1);
-}
-
-.reveal.visible {
-
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes entrance {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(30px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-@keyframes scroll {
-
-    0%,
-    100% {
-
-        opacity: .3;
-
-        transform:
-            scaleY(.6);
-
-        transform-origin: top;
-    }
-
-    50% {
-
-        opacity: 1;
-
-        transform:
-            scaleY(1);
-    }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .nav-links {
-
-        gap: 24px;
-    }
-
-    .hero-content {
-
-        left: 6vw;
-
-        bottom: 10vh;
-    }
-
-    .about-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-    }
-
-    .about-number {
-
-        display: none;
-    }
-
-    .journey-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .journey-card {
-
-        min-height: 300px;
-
-        border-right: none;
-
-        border-bottom:
-            1px solid var(--line);
-    }
-
-    .journey-card:last-child {
-
-        border-bottom: none;
-    }
-
-    .connect-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-
-        min-height: 100svh;
-
-        background-position: center center;
-    }
-
-    .nav {
-
-        justify-content: center;
-
-        padding:
-            22px 10px;
-    }
-
-    .nav-links {
-
-        gap: 16px;
-    }
-
-    .nav-links a {
-
-        font-size: 8px;
-
-        letter-spacing: .13em;
-    }
-
-    .hero-content {
-
-        left: 7vw;
-
-        bottom: 10vh;
-    }
-
-    .hero-name {
-
-        font-size: 72px;
-    }
-
-    .hero-script {
-
-        font-size: 40px;
-
-        margin-left: 13vw;
-    }
-
-    .hero-description {
-
-        width: 280px;
-
-        font-size: 17px;
-    }
-
-    .hero-label {
-
-        display: none;
-    }
-
-    .scroll {
-
-        display: none;
-    }
-
-    .section {
-
-        padding:
-            95px 7vw;
-    }
-
-    .section-title {
-
-        font-size: 58px;
-    }
-
-    .journey-top,
-    .portfolio-top {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .gallery {
-
-        columns: 2 145px;
-
-        column-gap: 9px;
-    }
-
-    .gallery-item {
-
-        margin-bottom: 9px;
-    }
-
-    .statement {
-
-        padding:
-            105px 7vw;
-    }
-
-    .connect-title {
-
-        font-size: 78px;
-    }
-
-    footer {
-
-        flex-direction: column;
-
-        gap: 12px;
-
-        text-align: center;
-    }
-
-    .viewer-prev {
-
-        left: 10px;
-    }
-
-    .viewer-next {
-
-        right: 10px;
-    }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .nav-links {
-
-        gap: 11px;
-    }
-
-    .nav-links a {
-
-        font-size: 7px;
-    }
-
-    .hero-name {
-
-        font-size: 62px;
-    }
-
-    .gallery {
-
-        columns: 1;
-    }
-
-    .connect-title {
-
-        font-size: 65px;
-    }
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
-     PROGRESS
-===================================================== -->
-
-<div class="progress" id="progress"></div>
-
-
-<!-- =====================================================
-     FIRST VIEWPORT
-     
-     background1.png IS THE COMPLETE BACKGROUND.
-===================================================== -->
-
-<header class="hero" id="home">
-
-
-    <!-- transparent navigation -->
-
-    <nav class="nav">
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#journey">Journey</a>
-            </li>
-
-            <li>
-                <a href="#portfolio">Portfolio</a>
-            </li>
-
-            <li>
-                <a href="#connect">Connect</a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-
-    <!-- very subtle readability layer -->
-
-    <div class="hero-vignette"></div>
-
-
-    <!-- hero typography -->
-
-    <div class="hero-content">
-
-        <div class="hero-overline">
-            Dancer · Performer · Learner
-        </div>
-
-
-        <h1 class="hero-name">
-
-            <span>Sayan</span>
-
-            <span class="gold">
-                Majumder
-            </span>
-
-        </h1>
-
-
-        <div class="hero-script">
-            Dance is expression
-        </div>
-
-
-        <p class="hero-description">
-
-            Exploring movement, rhythm and
-            expression through the Sabarno
-            Dance style.
-
-        </p>
-
-
-        <a
-            href="#portfolio"
-            class="hero-button"
-        >
-
-            Explore my journey
-
-            <span>→</span>
-
-        </a>
-
-    </div>
-
-
-    <!-- vertical identity -->
-
-    <div class="hero-label">
-
-        Sabarno Dance · Tradition · Movement
-
-    </div>
-
-
-    <!-- scroll -->
-
-    <div class="scroll">
-
-        <span>Scroll</span>
-
-        <div class="scroll-line"></div>
-
-    </div>
-
-
-</header>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    class="section black-section"
-    id="about"
->
-
-    <div class="section-inner">
-
-        <div class="about-grid reveal">
-
-
-            <div>
-
-                <div class="section-label">
-                    01 · About
-                </div>
-
-                <div class="about-number">
-                    01
-                </div>
-
-            </div>
-
-
-            <div class="about-content">
-
-                <h2 class="section-title">
-
-                    My Dance
-
-                    <br>
-
-                    <em>Journey</em>
-
-                </h2>
-
-
-                <p class="about-intro">
-
-                    Three years of learning,
-                    movement and discovering
-                    <span>
-                        expression through dance.
-                    </span>
-
-                </p>
-
-
-                <p class="about-text">
-
-                    I have been learning the
-                    Sabarno Dance style under
-                    Guru Sri Sabarnik De at
-                    Brahma-Kamal Institute of
-                    Dance and Drawing.
-
-                    <br><br>
-
-                    My practice explores the
-                    relationship between classical
-                    Indian movement, expression,
-                    rhythm and contemporary
-                    interpretation.
-
-                </p>
-
-
-                <div class="quote">
-
-                    <p>
-
-                        “Sabarno Dance style is a
-                        fusion of Natya Shastra,
-                        Uday Shankar style and
-                        Odissi.”
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PHILOSOPHY
-===================================================== -->
-
-<section class="philosophy">
-
-    <div class="reveal">
-
-        <div class="philosophy-label">
-            The philosophy
-        </div>
-
-        <h2 class="philosophy-title">
-
-            Movement becomes
-            <span>expression.</span>
-
-            <br>
-
-            Rhythm becomes
-            <span>story.</span>
-
-        </h2>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     JOURNEY
-===================================================== -->
-
-<section
-    class="section red-section"
-    id="journey"
->
-
-    <div class="section-inner">
-
-
-        <div class="journey-top reveal">
-
-            <div>
-
-                <div class="section-label">
-                    02 · Journey
-                </div>
-
-                <h2 class="section-title">
-
-                    The
-
-                    <br>
-
-                    <em>Foundations</em>
-
-                </h2>
-
-            </div>
-
-
-            <p class="journey-description">
-
-                My learning is shaped by
-                three artistic foundations
-                brought together through
-                the Sabarno Dance style.
-
-            </p>
-
-        </div>
-
-
-        <div class="journey-grid reveal">
-
-
-            <article class="journey-card">
-
-                <div class="journey-number">
-                    01
-                </div>
-
-                <h3>
-                    Natya
-                    <br>
-                    Shastra
-                </h3>
-
-                <p>
-
-                    Classical Indian concepts
-                    of expression, movement,
-                    rhythm and dramatic
-                    representation.
-
-                </p>
-
-                <div class="journey-word">
-                    Expression
-                </div>
-
-            </article>
-
-
-            <article class="journey-card">
-
-                <div class="journey-number">
-                    02
-                </div>
-
-                <h3>
-                    Uday
-                    <br>
-                    Shankar
-                </h3>
-
-                <p>
-
-                    Exploring expressive and
-                    innovative movement
-                    vocabulary associated
-                    with the Uday Shankar
-                    tradition.
-
-                </p>
-
-                <div class="journey-word">
-                    Movement
-                </div>
-
-            </article>
-
-
-            <article class="journey-card">
-
-                <div class="journey-number">
-                    03
-                </div>
-
-                <h3>
-                    Odissi
-                </h3>
-
-                <p>
-
-                    Drawing inspiration from
-                    the grace, posture, rhythm
-                    and sculptural quality
-                    of Odissi.
-
-                </p>
-
-                <div class="journey-word">
-                    Grace
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PORTFOLIO
-===================================================== -->
-
-<section
-    class="section black-section"
-    id="portfolio"
->
-
-    <div class="section-inner">
-
-
-        <div class="portfolio-top reveal">
-
-            <div>
-
-                <div class="section-label">
-                    03 · Portfolio
-                </div>
-
-                <h2 class="section-title">
-
-                    Dance
-
-                    <br>
-
-                    <em>in Motion</em>
-
-                </h2>
-
-            </div>
-
-
-            <p class="portfolio-description">
-
-                A visual collection of
-                moments from my dance
-                practice, performances
-                and artistic journey.
-
-                <br><br>
-
-                Select a photograph to
-                enter the gallery.
-
-            </p>
-
-        </div>
-
-
-        <div class="gallery reveal">
-
-
-            <div
-                class="gallery-item"
-                data-index="0"
-            >
-
-                <img
-                    src="assests/Sayan01.jpg"
-                    alt="Sayan Majumder dance photograph"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <span class="gallery-number">
-                        01
-                    </span>
-
-                    <span class="gallery-open">
-                        View
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="gallery-item"
-                data-index="1"
-            >
-
-                <img
-                    src="assests/Sayan3.jpg"
-                    alt="Sayan Majumder dance photograph"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <span class="gallery-number">
-                        02
-                    </span>
-
-                    <span class="gallery-open">
-                        View
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="gallery-item"
-                data-index="2"
-            >
-
-                <img
-                    src="assests/Sayan4.jpg"
-                    alt="Sayan Majumder dance photograph"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <span class="gallery-number">
-                        03
-                    </span>
-
-                    <span class="gallery-open">
-                        View
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="gallery-item"
-                data-index="3"
-            >
-
-                <img
-                    src="assests/Sayan5.jpg"
-                    alt="Sayan Majumder dance photograph"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <span class="gallery-number">
-                        04
-                    </span>
-
-                    <span class="gallery-open">
-                        View
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="gallery-item"
-                data-index="4"
-            >
-
-                <img
-                    src="assests/Sayan6.jpg"
-                    alt="Sayan Majumder dance photograph"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <span class="gallery-number">
-                        05
-                    </span>
-
-                    <span class="gallery-open">
-                        View
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="gallery-item"
-                data-index="5"
-            >
-
-                <img
-                    src="assests/Sayan7.jpg"
-                    alt="Sayan Majumder dance photograph"
-                    loading="lazy"
-                >
-
-                <div class="gallery-overlay">
-
-                    <span class="gallery-number">
-                        06
-                    </span>
-
-                    <span class="gallery-open">
-                        View
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     STATEMENT
-===================================================== -->
-
-<section class="statement">
-
-    <div class="statement-inner reveal">
-
-        <blockquote>
-
-            “Every movement carries
-            <span>memory.</span>
-
-            <br>
-
-            Every rhythm carries
-            <span>meaning.</span>”
-
-        </blockquote>
-
-        <div class="statement-author">
-
-            Sayan Majumder
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONNECT
-===================================================== -->
-
-<section
-    class="section red-section connect"
-    id="connect"
->
-
-    <div class="section-inner">
-
-        <div class="connect-grid reveal">
-
-
-            <div>
-
-                <div class="section-label">
-                    04 · Connect
-                </div>
-
-                <h2 class="connect-title">
-
-                    Follow
-
-                    <span>
-                        the Journey
-                    </span>
-
-                </h2>
-
-            </div>
-
-
-            <div>
-
-                <p class="connect-copy">
-
-                    For performances,
-                    collaborations,
-                    photography and
-                    dance-related work,
-                    connect with me.
-
-                </p>
-
-
-                <div class="social">
-
-                    <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        Instagram
-
-                        <span>↗</span>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                    >
-
-                        Facebook
-
-                        <span>↗</span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <span>
-        © 2026 Sayan Majumder
-    </span>
-
-    <span class="footer-star">
-        ✦
-    </span>
-
-    <span>
-        Dance · Tradition · Expression
-    </span>
-
-</footer>
-
-
-<!-- =====================================================
-     IMAGE VIEWER
-===================================================== -->
-
-<div
-    class="viewer"
-    id="viewer"
->
-
-
-    <button
-        class="viewer-close"
-        id="viewerClose"
-    >
-        ×
-    </button>
-
-
-    <button
-        class="viewer-prev"
-        id="viewerPrev"
-    >
-        ‹
-    </button>
-
-
-    <img
-        class="viewer-image"
-        id="viewerImage"
-        src=""
-        alt="Dance photograph"
-    >
-
-
-    <button
-        class="viewer-next"
-        id="viewerNext"
-    >
-        ›
-    </button>
-
-
-    <div
-        class="viewer-caption"
-        id="viewerCaption"
-    >
-        Photograph 01
-    </div>
-
-
-</div>
-
-
-<script>
-
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
-
-const progress =
-    document.getElementById("progress");
-
-window.addEventListener("scroll", () => {
-
-    const scrollTop =
-        window.scrollY;
-
-    const height =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const percent =
-        (scrollTop / height) * 100;
-
-    progress.style.width =
-        percent + "%";
-
-});
-
-
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-const reveals =
-    document.querySelectorAll(".reveal");
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: .12
-        }
-    );
-
-
-reveals.forEach(element => {
-
-    observer.observe(element);
-
-});
-
-
-/* =========================================================
-   GALLERY
-========================================================= */
-
-const galleryItems =
-    document.querySelectorAll(".gallery-item");
-
-const viewer =
-    document.getElementById("viewer");
-
-const viewerImage =
-    document.getElementById("viewerImage");
-
-const viewerCaption =
-    document.getElementById("viewerCaption");
-
-const viewerClose =
-    document.getElementById("viewerClose");
-
-const viewerPrev =
-    document.getElementById("viewerPrev");
-
-const viewerNext =
-    document.getElementById("viewerNext");
-
-
-const images =
-    Array.from(galleryItems).map(
-        item =>
-            item.querySelector("img").src
-    );
-
-
-let current =
-    0;
-
-
-/* open */
-
-function openViewer(index) {
-
-    current = index;
-
-    viewerImage.src =
-        images[current];
-
-    viewerCaption.textContent =
-        "Photograph " +
-        String(current + 1).padStart(2, "0");
-
-    viewer.classList.add(
-        "active"
-    );
-
-    document.body.classList.add(
-        "lock"
-    );
-
-}
-
-
-/* close */
-
-function closeViewer() {
-
-    viewer.classList.remove(
-        "active"
-    );
-
-    document.body.classList.remove(
-        "lock"
-    );
-
-}
-
-
-/* previous */
-
-function previousImage() {
-
-    current--;
-
-    if (current < 0) {
-
-        current =
-            images.length - 1;
-
-    }
-
-    openViewer(current);
-
-}
-
-
-/* next */
-
-function nextImage() {
-
-    current++;
-
-    if (
-        current >=
-        images.length
-    ) {
-
-        current = 0;
-
-    }
-
-    openViewer(current);
-
-}
-
-
-/* click images */
-
-galleryItems.forEach(
-    (item, index) => {
-
-        item.addEventListener(
-            "click",
-            () => {
-
-                openViewer(index);
-
-            }
-        );
-
-    }
-);
-
-
-/* buttons */
-
-viewerClose.addEventListener(
-    "click",
-    closeViewer
-);
-
-viewerPrev.addEventListener(
-    "click",
-    previousImage
-);
-
-viewerNext.addEventListener(
-    "click",
-    nextImage
-);
-
-
-/* background click */
-
-viewer.addEventListener(
-    "click",
-    event => {
-
-        if (
-            event.target === viewer
-        ) {
-
-            closeViewer();
-
-        }
-
-    }
-);
-
-
-/* keyboard */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            !viewer.classList.contains(
-                "active"
-            )
-        ) {
-
-            return;
-
-        }
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeViewer();
-
-        }
-
-        if (
-            event.key === "ArrowLeft"
-        ) {
-
-            previousImage();
-
-        }
-
-        if (
-            event.key === "ArrowRight"
-        ) {
-
-            nextImage();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   HERO MICRO PARALLAX
-========================================================= */
-
-const hero =
-    document.querySelector(".hero");
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const y =
-            window.scrollY;
-
-        if (
-            y <= window.innerHeight
-        ) {
-
-            hero.style.backgroundPosition =
-                `center calc(50% + ${y * .08}px)`;
-
-        }
-
-    }
-);
-
-</script>
-
-</body>
-</html>
+    height:
 ```
