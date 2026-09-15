@@ -923,17 +923,6 @@
             line-height: 1.8;
         }
 
-        /*
-           IMPORTANT:
-
-           No fixed image height.
-           No fixed aspect-ratio.
-
-           Portrait images remain portrait.
-           Landscape images remain landscape.
-           Square images remain square.
-        */
-
         .gallery {
 
             display: grid;
@@ -2031,21 +2020,24 @@
             </div>
 
 
-            <!--
-                FLEXIBLE GALLERY
+            <!-- =================================================
+                 FLEXIBLE GALLERY
 
-                You can add more images simply by copying
-                another .gallery-item.
+                 7 PHOTOS
 
-                Portrait = portrait
-                Landscape = landscape
-                Square = square
-
-                No fixed height is applied.
-            -->
+                 01 Sayan01.jpg
+                 02 Sayan3.jpg
+                 03 Sayan4.jpg
+                 04 Sayan5.jpg
+                 05 Sayan6.jpg
+                 06 Sayan7.jpg
+                 07 3a.jpg
+            ================================================== -->
 
             <div class="gallery reveal">
 
+
+                <!-- PHOTO 01 -->
 
                 <div
                     class="gallery-item"
@@ -2054,7 +2046,7 @@
 
                     <img
                         src="assests/Sayan01.jpg"
-                        alt="Sayan Majumder dance photograph"
+                        alt="Sayan Majumder dance photograph 01"
                         loading="lazy"
                     >
 
@@ -2073,6 +2065,8 @@
                 </div>
 
 
+                <!-- PHOTO 02 -->
+
                 <div
                     class="gallery-item"
                     data-index="1"
@@ -2080,7 +2074,7 @@
 
                     <img
                         src="assests/Sayan3.jpg"
-                        alt="Sayan Majumder dance photograph"
+                        alt="Sayan Majumder dance photograph 02"
                         loading="lazy"
                     >
 
@@ -2099,6 +2093,8 @@
                 </div>
 
 
+                <!-- PHOTO 03 -->
+
                 <div
                     class="gallery-item"
                     data-index="2"
@@ -2106,7 +2102,7 @@
 
                     <img
                         src="assests/Sayan4.jpg"
-                        alt="Sayan Majumder dance photograph"
+                        alt="Sayan Majumder dance photograph 03"
                         loading="lazy"
                     >
 
@@ -2125,6 +2121,8 @@
                 </div>
 
 
+                <!-- PHOTO 04 -->
+
                 <div
                     class="gallery-item"
                     data-index="3"
@@ -2132,7 +2130,7 @@
 
                     <img
                         src="assests/Sayan5.jpg"
-                        alt="Sayan Majumder dance photograph"
+                        alt="Sayan Majumder dance photograph 04"
                         loading="lazy"
                     >
 
@@ -2151,6 +2149,8 @@
                 </div>
 
 
+                <!-- PHOTO 05 -->
+
                 <div
                     class="gallery-item"
                     data-index="4"
@@ -2158,7 +2158,7 @@
 
                     <img
                         src="assests/Sayan6.jpg"
-                        alt="Sayan Majumder dance photograph"
+                        alt="Sayan Majumder dance photograph 05"
                         loading="lazy"
                     >
 
@@ -2177,6 +2177,8 @@
                 </div>
 
 
+                <!-- PHOTO 06 -->
+
                 <div
                     class="gallery-item"
                     data-index="5"
@@ -2184,7 +2186,7 @@
 
                     <img
                         src="assests/Sayan7.jpg"
-                        alt="Sayan Majumder dance photograph"
+                        alt="Sayan Majumder dance photograph 06"
                         loading="lazy"
                     >
 
@@ -2201,15 +2203,18 @@
                     </div>
 
                 </div>
-                     
+
+
+                <!-- PHOTO 07 — 3a.jpg -->
+
                 <div
                     class="gallery-item"
-                    data-index="2"
+                    data-index="6"
                 >
 
                     <img
                         src="assests/3a.jpg"
-                        alt="Sayan Majumder dance photograph"
+                        alt="Sayan Majumder dance photograph 07"
                         loading="lazy"
                     >
 
@@ -2226,7 +2231,6 @@
                     </div>
 
                 </div>
-
 
 
             </div>
@@ -2421,7 +2425,7 @@
             class="viewer-counter"
             id="viewerCounter"
         >
-            01 / 06
+            01 / 07
         </div>
 
     </div>
@@ -2536,32 +2540,47 @@
             document.getElementById("viewerCounter");
 
 
-        const images = Array.from(galleryItems)
-            .map(item => {
+        /*
+            Automatically collect ALL gallery images.
 
-                const image =
-                    item.querySelector("img");
+            This means if you add another gallery-item,
+            the viewer will automatically include it.
+        */
 
-                return {
-                    src: image.src,
-                    alt: image.alt
-                };
+        const images =
+            Array.from(galleryItems)
+                .map(item => {
 
-            });
+                    const image =
+                        item.querySelector("img");
+
+                    return {
+                        src: image.getAttribute("src"),
+                        alt: image.getAttribute("alt")
+                    };
+
+                });
 
 
         let currentImage = 0;
 
 
+        /* =========================================================
+           UPDATE VIEWER
+        ========================================================== */
+
         function updateViewer() {
 
-            if (!images.length) return;
+            if (!images.length) {
+                return;
+            }
 
             viewerImage.src =
                 images[currentImage].src;
 
             viewerImage.alt =
                 images[currentImage].alt;
+
 
             viewerCounter.textContent =
                 String(currentImage + 1).padStart(2, "0")
@@ -2570,7 +2589,18 @@
         }
 
 
+        /* =========================================================
+           OPEN VIEWER
+        ========================================================== */
+
         function openViewer(index) {
+
+            if (
+                index < 0 ||
+                index >= images.length
+            ) {
+                return;
+            }
 
             currentImage = index;
 
@@ -2587,6 +2617,10 @@
         }
 
 
+        /* =========================================================
+           CLOSE VIEWER
+        ========================================================== */
+
         function closeViewer() {
 
             viewer.classList.remove("active");
@@ -2600,7 +2634,15 @@
         }
 
 
+        /* =========================================================
+           NEXT IMAGE
+        ========================================================== */
+
         function showNext() {
+
+            if (!images.length) {
+                return;
+            }
 
             currentImage =
                 (currentImage + 1) %
@@ -2610,7 +2652,15 @@
         }
 
 
+        /* =========================================================
+           PREVIOUS IMAGE
+        ========================================================== */
+
         function showPrevious() {
+
+            if (!images.length) {
+                return;
+            }
 
             currentImage =
                 (currentImage - 1 + images.length) %
@@ -2619,6 +2669,10 @@
             updateViewer();
         }
 
+
+        /* =========================================================
+           GALLERY CLICK
+        ========================================================== */
 
         galleryItems.forEach(
             (item, index) => {
@@ -2631,6 +2685,10 @@
             }
         );
 
+
+        /* =========================================================
+           VIEWER BUTTONS
+        ========================================================== */
 
         viewerClose.addEventListener(
             "click",
@@ -2650,6 +2708,10 @@
         );
 
 
+        /* =========================================================
+           CLOSE WHEN CLICKING OUTSIDE IMAGE
+        ========================================================== */
+
         viewer.addEventListener(
             "click",
             event => {
@@ -2663,6 +2725,10 @@
             }
         );
 
+
+        /* =========================================================
+           KEYBOARD CONTROLS
+        ========================================================== */
 
         document.addEventListener(
             "keydown",
@@ -2704,7 +2770,9 @@
                 const scrollY =
                     window.scrollY;
 
-                if (scrollY <= window.innerHeight) {
+                if (
+                    scrollY <= window.innerHeight
+                ) {
 
                     hero.style.backgroundPosition =
                         `center ${scrollY * 0.18}px`;
