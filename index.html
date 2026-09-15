@@ -60,16 +60,27 @@
            Transparent — sits ON TOP of background
         ========================================= */
 
-       <nav>
-    <div class="nav-container">
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#journey">Journey</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#connect">Connect</a></li>
-        </ul>
-    </div>
-</nav>
+      .nav-links a {
+    color: #F2C66D;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.75);
+
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFF1C2;
+
+    text-shadow:
+        0 0 8px rgba(242, 198, 109, 0.65),
+        0 2px 5px rgba(0, 0, 0, 0.8);
+}
 
 And rep
 
