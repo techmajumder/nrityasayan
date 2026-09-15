@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <meta name="description"
       content="Sayan Majumder — Dancer, performer and learner of the Sabarno Dance style.">
@@ -40,6 +41,10 @@ body {
     overflow-x: hidden;
 }
 
+body.lightbox-open {
+    overflow: hidden;
+}
+
 img {
     max-width: 100%;
 }
@@ -47,6 +52,10 @@ img {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+button {
+    font-family: inherit;
 }
 
 
@@ -116,7 +125,9 @@ a {
     position: absolute;
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 50;
 
     display: flex;
@@ -130,6 +141,7 @@ a {
 .nav-links {
     display: flex;
     align-items: center;
+
     gap: 42px;
 
     list-style: none;
@@ -144,6 +156,7 @@ a {
     font-weight: 600;
 
     letter-spacing: .2em;
+
     text-transform: uppercase;
 
     text-shadow:
@@ -159,6 +172,7 @@ a {
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: -8px;
 
@@ -172,6 +186,7 @@ a {
 
 .nav-links a:hover {
     color: #fff1c8;
+
     transform: translateY(-2px);
 }
 
@@ -181,13 +196,14 @@ a {
 
 
 /* =========================================================
-   HERO
+   HERO — DESKTOP
 ========================================================= */
 
 .hero {
     position: relative;
 
     width: 100%;
+
     height: 100vh;
     height: 100svh;
 
@@ -195,20 +211,24 @@ a {
 
     overflow: hidden;
 
-    background-image: url("assests/background1.png");
+    background-image:
+        url("assests/background1.png");
 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    background-color: #16090b;
 }
 
 
-/* Dark cinematic overlay */
+/* Cinematic overlay */
 
 .hero::after {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -220,10 +240,14 @@ a {
         );
 
     pointer-events: none;
+
+    z-index: 1;
 }
 
 
-/* Hero content */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
     position: absolute;
@@ -243,11 +267,13 @@ a {
     font-weight: 600;
 
     letter-spacing: .38em;
+
     text-transform: uppercase;
 
     margin-bottom: 18px;
 
-    text-shadow: 0 2px 8px rgba(0,0,0,.8);
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.8);
 }
 
 .hero-title {
@@ -273,11 +299,13 @@ a {
     color: #eadbc2;
 
     font-size: 15px;
+
     line-height: 1.8;
 
     font-weight: 300;
 
-    text-shadow: 0 2px 8px rgba(0,0,0,.8);
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.8);
 }
 
 .hero-button {
@@ -295,6 +323,7 @@ a {
     font-weight: 600;
 
     letter-spacing: .25em;
+
     text-transform: uppercase;
 
     transition:
@@ -305,13 +334,16 @@ a {
 
 .hero-button:hover {
     background: var(--gold);
+
     color: var(--black);
 
     transform: translateY(-3px);
 }
 
 
-/* Vertical text */
+/* =========================================================
+   HERO SIDE LABEL
+========================================================= */
 
 .hero-side-label {
     position: absolute;
@@ -326,12 +358,16 @@ a {
     color: rgba(244,210,140,.75);
 
     font-size: 9px;
+
     letter-spacing: .4em;
+
     text-transform: uppercase;
 }
 
 
-/* Scroll indicator */
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
 
 .scroll-indicator {
     position: absolute;
@@ -344,7 +380,9 @@ a {
     transform: translateX(-50%);
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
     gap: 10px;
@@ -354,7 +392,9 @@ a {
     color: var(--gold);
 
     font-size: 8px;
+
     letter-spacing: .3em;
+
     text-transform: uppercase;
 }
 
@@ -362,16 +402,18 @@ a {
     width: 1px;
     height: 45px;
 
-    background: linear-gradient(
-        to bottom,
-        var(--gold),
-        transparent
-    );
+    background:
+        linear-gradient(
+            to bottom,
+            var(--gold),
+            transparent
+        );
 
     animation: scrollLine 2s infinite;
 }
 
 @keyframes scrollLine {
+
     0% {
         transform: scaleY(0);
         transform-origin: top;
@@ -411,8 +453,8 @@ a {
     display: grid;
 
     grid-template-columns:
-        minmax(280px, .8fr)
-        minmax(300px, 1.2fr);
+        minmax(280px,.8fr)
+        minmax(300px,1.2fr);
 
     gap: 100px;
 
@@ -441,6 +483,7 @@ a {
     font-family: "Cormorant Garamond", serif;
 
     font-size: 25px;
+
     line-height: 1.4;
 }
 
@@ -454,6 +497,7 @@ a {
     font-family: "DM Sans", sans-serif;
 
     font-size: 9px;
+
     letter-spacing: .25em;
 
     text-transform: uppercase;
@@ -468,6 +512,7 @@ a {
     min-height: 520px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -507,7 +552,7 @@ a {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(38px, 5vw, 70px);
+    font-size: clamp(38px,5vw,70px);
 
     line-height: 1;
 
@@ -516,6 +561,7 @@ a {
 
 .philosophy-text em {
     color: var(--gold);
+
     font-style: italic;
 }
 
@@ -530,6 +576,7 @@ a {
 
 .journey-intro {
     max-width: 650px;
+
     margin-top: 30px;
 }
 
@@ -537,7 +584,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(3,minmax(0,1fr));
 
     gap: 20px;
 
@@ -568,13 +615,15 @@ a {
 .journey-card:hover {
     transform: translateY(-8px);
 
-    border-color: rgba(244,210,140,.55);
+    border-color:
+        rgba(244,210,140,.55);
 }
 
 .journey-number {
     color: var(--gold);
 
     font-size: 10px;
+
     letter-spacing: .3em;
 
     margin-bottom: 50px;
@@ -586,6 +635,7 @@ a {
     font-family: "Cormorant Garamond", serif;
 
     font-size: 34px;
+
     font-weight: 400;
 
     margin-bottom: 18px;
@@ -595,6 +645,7 @@ a {
     color: var(--muted);
 
     font-size: 13px;
+
     line-height: 1.8;
 
     font-weight: 300;
@@ -631,6 +682,7 @@ a {
     color: var(--muted);
 
     font-size: 13px;
+
     line-height: 1.8;
 }
 
@@ -643,7 +695,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(3,minmax(0,1fr));
 
     gap: 18px;
 
@@ -654,12 +706,6 @@ a {
     position: relative;
 
     width: 100%;
-
-    /*
-       Every thumbnail has the same square shape.
-       Portrait / landscape / square source images
-       therefore cannot change the grid layout.
-    */
 
     aspect-ratio: 1 / 1;
 
@@ -678,13 +724,8 @@ a {
 
     max-width: none;
 
-    /*
-       Thumbnail uses crop, not distortion.
-       The original image remains available in
-       the fullscreen viewer.
-    */
-
     object-fit: cover;
+
     object-position: center center;
 
     transition:
@@ -697,9 +738,6 @@ a {
 
     filter: brightness(.72);
 }
-
-
-/* Gallery overlay */
 
 .gallery-overlay {
     position: absolute;
@@ -766,6 +804,7 @@ a {
 
 .statement-inner {
     max-width: 950px;
+
     margin: auto;
 }
 
@@ -774,7 +813,7 @@ a {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(36px, 5vw, 68px);
+    font-size: clamp(36px,5vw,68px);
 
     line-height: 1.05;
 
@@ -803,6 +842,7 @@ a {
 
 .connect-inner {
     max-width: 800px;
+
     margin: auto;
 }
 
@@ -866,7 +906,8 @@ a {
 footer {
     padding: 30px 7vw;
 
-    border-top: 1px solid rgba(244,210,140,.1);
+    border-top:
+        1px solid rgba(244,210,140,.1);
 
     background: #080504;
 
@@ -885,7 +926,7 @@ footer p {
 
 
 /* =========================================================
-   FULLSCREEN IMAGE VIEWER
+   LIGHTBOX
 ========================================================= */
 
 .lightbox {
@@ -911,12 +952,6 @@ footer p {
 }
 
 .lightbox-image {
-    /*
-       IMPORTANT:
-       Natural image proportions are preserved here.
-       The source image is NOT cropped.
-    */
-
     display: block;
 
     width: auto;
@@ -995,7 +1030,7 @@ footer p {
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   REVEAL
 ========================================================= */
 
 .reveal {
@@ -1016,7 +1051,7 @@ footer p {
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1037,12 +1072,12 @@ footer p {
 
     .journey-grid {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2,minmax(0,1fr));
     }
 
     .gallery {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(2,minmax(0,1fr));
 
         gap: 15px;
     }
@@ -1057,72 +1092,316 @@ footer p {
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE — COMPLETE HERO OPTIMIZATION
 ========================================================= */
 
 @media (max-width: 600px) {
 
-    .section {
-        padding: 90px 6vw;
+
+    /* -----------------------------------------------------
+       MOBILE BODY
+    ----------------------------------------------------- */
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
     }
 
 
-    /* Navigation */
+    /* -----------------------------------------------------
+       MOBILE NAVIGATION
+    ----------------------------------------------------- */
 
     .nav {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
         justify-content: center;
 
-        padding: 22px 4vw;
+        padding-top:
+            max(22px, env(safe-area-inset-top));
+
+        padding-left: 12px;
+        padding-right: 12px;
+
+        background: transparent;
     }
 
     .nav-links {
-        gap: 16px;
+        width: 100%;
+
+        justify-content: center;
+
+        gap: clamp(12px, 4vw, 20px);
     }
 
     .nav-links a {
         font-size: 8px;
 
-        letter-spacing: .14em;
+        letter-spacing: .12em;
+
+        white-space: nowrap;
+
+        text-shadow:
+            0 2px 5px rgba(0,0,0,.95),
+            0 0 10px rgba(0,0,0,.75);
     }
 
 
-    /* Hero */
+    /* -----------------------------------------------------
+       MOBILE HERO
+       
+       IMPORTANT:
+       Desktop keeps background-size: cover.
+
+       Mobile uses:
+       background-size: auto 100%;
+
+       This fits the complete image height instead of
+       zooming the image to fill the narrow phone width.
+
+       This dramatically reduces side cropping.
+    ----------------------------------------------------- */
 
     .hero {
+
+        width: 100%;
+
+        height: 100svh;
         min-height: 620px;
 
+        /*
+         * Do NOT use cover on mobile.
+         */
+        background-size: auto 100%;
+
         background-position: center center;
+
+        background-repeat: no-repeat;
+
+        background-color: #16090b;
+
+        /*
+         * Prevent any horizontal overflow.
+         */
+        overflow: hidden;
     }
 
+
+    /* -----------------------------------------------------
+       MOBILE HERO OVERLAY
+       
+       Slightly stronger at the bottom so text remains
+       readable without making the whole image too dark.
+    ----------------------------------------------------- */
+
+    .hero::after {
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,.18) 0%,
+                rgba(0,0,0,.08) 35%,
+                rgba(0,0,0,.30) 62%,
+                rgba(0,0,0,.72) 100%
+            );
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE HERO CONTENT
+    ----------------------------------------------------- */
+
     .hero-content {
+
         left: 7vw;
         right: 7vw;
 
-        bottom: 12vh;
+        /*
+         * Keep content above the bottom edge
+         * while avoiding the phone navigation area.
+         */
+        bottom:
+            calc(
+                11vh +
+                env(safe-area-inset-bottom)
+            );
+
+        max-width: none;
     }
+
 
     .hero-kicker {
+
         font-size: 8px;
 
-        letter-spacing: .25em;
+        letter-spacing: .22em;
+
+        margin-bottom: 14px;
+
+        line-height: 1.5;
     }
+
 
     .hero-title {
-        font-size: clamp(62px, 19vw, 105px);
+
+        /*
+         * Responsive but controlled typography.
+         */
+        font-size:
+            clamp(
+                60px,
+                18vw,
+                100px
+            );
+
+        line-height: .78;
+
+        letter-spacing: -.025em;
+
+        text-shadow:
+            0 4px 20px rgba(0,0,0,.8);
     }
+
 
     .hero-description {
-        font-size: 13px;
 
-        max-width: 400px;
+        max-width: 330px;
+
+        margin-top: 24px;
+
+        font-size: 12px;
+
+        line-height: 1.7;
+
+        color: #eadbc2;
     }
+
+
+    .hero-button {
+
+        margin-top: 27px;
+
+        padding: 13px 19px;
+
+        font-size: 8px;
+
+        letter-spacing: .19em;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE SIDE LABEL
+    ----------------------------------------------------- */
 
     .hero-side-label {
         display: none;
     }
 
 
-    /* Journey */
+    /* -----------------------------------------------------
+       MOBILE SCROLL INDICATOR
+    ----------------------------------------------------- */
+
+    .scroll-indicator {
+
+        bottom:
+            calc(
+                18px +
+                env(safe-area-inset-bottom)
+            );
+
+        gap: 7px;
+    }
+
+    .scroll-indicator span {
+        font-size: 7px;
+
+        letter-spacing: .22em;
+    }
+
+    .scroll-line {
+        height: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE SECTIONS
+    ----------------------------------------------------- */
+
+    .section {
+        padding:
+            90px 6vw;
+    }
+
+
+    .section-title {
+        font-size:
+            clamp(
+                43px,
+                12vw,
+                65px
+            );
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+    ----------------------------------------------------- */
+
+    .about-grid {
+        gap: 45px;
+    }
+
+    .about-content .body-text {
+        margin-top: 25px;
+    }
+
+    .quote {
+        margin-top: 35px;
+
+        padding-left: 18px;
+
+        font-size: 21px;
+    }
+
+
+    /* -----------------------------------------------------
+       PHILOSOPHY
+    ----------------------------------------------------- */
+
+    .philosophy {
+        min-height: 430px;
+
+        padding:
+            80px 7vw;
+    }
+
+    .philosophy-mark {
+        font-size: 58px;
+
+        margin-bottom: 25px;
+    }
+
+    .philosophy-text {
+        font-size:
+            clamp(
+                35px,
+                10vw,
+                50px
+            );
+
+        line-height: 1.05;
+    }
+
+
+    /* -----------------------------------------------------
+       JOURNEY
+    ----------------------------------------------------- */
 
     .journey-grid {
         grid-template-columns: 1fr;
@@ -1138,13 +1417,48 @@ footer p {
         padding: 28px;
     }
 
+    .journey-number {
+        margin-bottom: 35px;
+    }
 
-    /* Gallery */
+
+    /* -----------------------------------------------------
+       PORTFOLIO
+    ----------------------------------------------------- */
+
+    .portfolio-heading {
+
+        gap: 25px;
+
+        margin-bottom: 40px;
+    }
+
+    .portfolio-description {
+        font-size: 12px;
+
+        line-height: 1.75;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE GALLERY
+    ----------------------------------------------------- */
 
     .gallery {
+
         grid-template-columns: 1fr;
 
         gap: 12px;
+    }
+
+    .gallery-item {
+
+        width: 100%;
+
+        /*
+         * Still perfectly uniform.
+         */
+        aspect-ratio: 1 / 1;
     }
 
     .gallery-overlay {
@@ -1152,38 +1466,214 @@ footer p {
     }
 
 
-    /* Connect */
+    /* -----------------------------------------------------
+       STATEMENT
+    ----------------------------------------------------- */
+
+    .statement {
+
+        padding:
+            100px 7vw;
+    }
+
+    .statement p {
+
+        font-size:
+            clamp(
+                36px,
+                10vw,
+                52px
+            );
+
+        line-height: 1.05;
+    }
+
+
+    /* -----------------------------------------------------
+       CONNECT
+    ----------------------------------------------------- */
+
+    .connect-description {
+        margin-top: 25px;
+    }
 
     .social-links {
+
         flex-direction: column;
 
         align-items: center;
+
+        margin-top: 35px;
     }
 
     .social-link {
+
         width: 100%;
 
         max-width: 280px;
+
+        padding: 14px 20px;
     }
 
 
-    /* Lightbox */
+    /* -----------------------------------------------------
+       MOBILE LIGHTBOX
+    ----------------------------------------------------- */
 
     .lightbox {
-        padding: 15px;
+
+        padding:
+            max(15px, env(safe-area-inset-top))
+            15px
+            max(15px, env(safe-area-inset-bottom))
+            15px;
     }
 
     .lightbox-image {
+
         max-width: 94vw;
+
         max-height: 82vh;
+
+        width: auto;
+        height: auto;
+
+        object-fit: contain;
+    }
+
+    .lightbox-close {
+
+        top:
+            max(
+                18px,
+                env(safe-area-inset-top)
+            );
+
+        right: 18px;
+
+        font-size: 28px;
     }
 
     .lightbox-prev {
+
         left: 8px;
+
+        font-size: 38px;
     }
 
     .lightbox-next {
+
         right: 8px;
+
+        font-size: 38px;
+    }
+
+    .lightbox-counter {
+
+        bottom:
+            max(
+                18px,
+                env(safe-area-inset-bottom)
+            );
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 7px;
+
+        letter-spacing: .08em;
+    }
+
+    .hero-content {
+        bottom:
+            calc(
+                10vh +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+    .hero-title {
+        font-size: 58px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+
+        max-width: 290px;
+    }
+
+    .hero-button {
+        padding: 12px 16px;
+
+        font-size: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .hero {
+
+        height: 100svh;
+
+        min-height: 480px;
+
+        /*
+         * Landscape phones are wide enough to use cover.
+         */
+        background-size: cover;
+
+        background-position: center center;
+    }
+
+    .hero-content {
+
+        bottom: 8vh;
+    }
+
+    .hero-title {
+
+        font-size:
+            clamp(
+                55px,
+                10vw,
+                90px
+            );
+    }
+
+    .hero-description {
+
+        margin-top: 15px;
+
+        font-size: 11px;
+    }
+
+    .hero-button {
+
+        margin-top: 18px;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
 }
@@ -1202,8 +1692,11 @@ footer p {
     *,
     *::before,
     *::after {
+
         animation-duration: .01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: .01ms !important;
     }
 
@@ -1267,7 +1760,10 @@ footer p {
             through the Sabarno Dance style.
         </p>
 
-        <a href="#about" class="hero-button">
+        <a
+            href="#about"
+            class="hero-button"
+        >
             Explore My Journey
         </a>
 
@@ -1322,7 +1818,10 @@ footer p {
 
             </p>
 
-            <p class="body-text" style="margin-top:20px;">
+            <p
+                class="body-text"
+                style="margin-top:20px;"
+            >
 
                 My practice explores classical Indian movement,
                 expression, rhythm and contemporary interpretation,
@@ -1517,8 +2016,10 @@ footer p {
 
             <!-- 01 -->
 
-            <div class="gallery-item reveal"
-                 data-index="0">
+            <div
+                class="gallery-item reveal"
+                data-index="0"
+            >
 
                 <img
                     src="assests/Sayan01.jpg"
@@ -1543,8 +2044,10 @@ footer p {
 
             <!-- 02 -->
 
-            <div class="gallery-item reveal"
-                 data-index="1">
+            <div
+                class="gallery-item reveal"
+                data-index="1"
+            >
 
                 <img
                     src="assests/Sayan3.jpg"
@@ -1569,8 +2072,10 @@ footer p {
 
             <!-- 03 -->
 
-            <div class="gallery-item reveal"
-                 data-index="2">
+            <div
+                class="gallery-item reveal"
+                data-index="2"
+            >
 
                 <img
                     src="assests/Sayan4.jpg"
@@ -1595,8 +2100,10 @@ footer p {
 
             <!-- 04 -->
 
-            <div class="gallery-item reveal"
-                 data-index="3">
+            <div
+                class="gallery-item reveal"
+                data-index="3"
+            >
 
                 <img
                     src="assests/Sayan5.jpg"
@@ -1621,8 +2128,10 @@ footer p {
 
             <!-- 05 -->
 
-            <div class="gallery-item reveal"
-                 data-index="4">
+            <div
+                class="gallery-item reveal"
+                data-index="4"
+            >
 
                 <img
                     src="assests/Sayan6.jpg"
@@ -1647,8 +2156,10 @@ footer p {
 
             <!-- 06 -->
 
-            <div class="gallery-item reveal"
-                 data-index="5">
+            <div
+                class="gallery-item reveal"
+                data-index="5"
+            >
 
                 <img
                     src="assests/Sayan7.jpg"
@@ -1673,8 +2184,10 @@ footer p {
 
             <!-- 07 -->
 
-            <div class="gallery-item reveal"
-                 data-index="6">
+            <div
+                class="gallery-item reveal"
+                data-index="6"
+            >
 
                 <img
                     src="assests/3a.jpg"
@@ -1699,8 +2212,10 @@ footer p {
 
             <!-- 08 -->
 
-            <div class="gallery-item reveal"
-                 data-index="7">
+            <div
+                class="gallery-item reveal"
+                data-index="7"
+            >
 
                 <img
                     src="assests/Birvadra.jpeg"
@@ -1725,8 +2240,10 @@ footer p {
 
             <!-- 09 -->
 
-            <div class="gallery-item reveal"
-                 data-index="8">
+            <div
+                class="gallery-item reveal"
+                data-index="8"
+            >
 
                 <img
                     src="assests/Mahisasur.jpeg"
@@ -1751,8 +2268,10 @@ footer p {
 
             <!-- 10 -->
 
-            <div class="gallery-item reveal"
-                 data-index="9">
+            <div
+                class="gallery-item reveal"
+                data-index="9"
+            >
 
                 <img
                     src="assests/durga.jpeg"
@@ -1777,8 +2296,10 @@ footer p {
 
             <!-- 11 -->
 
-            <div class="gallery-item reveal"
-                 data-index="10">
+            <div
+                class="gallery-item reveal"
+                data-index="10"
+            >
 
                 <img
                     src="assests/ok.jpeg"
@@ -1817,9 +2338,11 @@ footer p {
     <div class="statement-inner reveal">
 
         <p>
+
             Dance is not only movement.
             It is the language through which
             <span>emotion becomes visible.</span>
+
         </p>
 
     </div>
@@ -1840,8 +2363,10 @@ footer p {
         </div>
 
         <h2 class="section-title">
+
             Let's Stay<br>
             <span>Connected</span>
+
         </h2>
 
         <p class="body-text connect-description">
@@ -1855,20 +2380,18 @@ footer p {
 
         <div class="social-links">
 
-            <!-- Replace # with your actual profile links -->
-
             <a
-                href="https://www.facebook.com/share/1cYyDSGW44/"
+                href="#"
                 class="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Instagram    
+                Instagram
             </a>
 
 
             <a
-                href="https://www.instagram.com/meghdutam_8?stkn=Y3d1aXd6M3A1ODd0"
+                href="#"
                 class="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1897,13 +2420,14 @@ footer p {
 
 
 <!-- =====================================================
-     FULLSCREEN IMAGE VIEWER
+     LIGHTBOX
 ===================================================== -->
 
-<div class="lightbox"
-     id="lightbox"
-     aria-hidden="true">
-
+<div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+>
 
     <button
         class="lightbox-close"
@@ -1956,12 +2480,15 @@ footer p {
 
 <script>
 
+
 /* =========================================================
-   GALLERY / LIGHTBOX
+   LIGHTBOX
 ========================================================= */
 
 const galleryItems =
-    Array.from(document.querySelectorAll(".gallery-item"));
+    Array.from(
+        document.querySelectorAll(".gallery-item")
+    );
 
 const lightbox =
     document.getElementById("lightbox");
@@ -1985,99 +2512,137 @@ const lightboxNext =
 let currentIndex = 0;
 
 
-/* Open image */
+/* ---------------------------------------------------------
+   OPEN
+--------------------------------------------------------- */
 
 function openLightbox(index) {
 
-    if (!galleryItems.length) return;
+    if (!galleryItems.length) {
+        return;
+    }
 
     currentIndex =
         (index + galleryItems.length) %
         galleryItems.length;
 
     const image =
-        galleryItems[currentIndex].querySelector("img");
+        galleryItems[currentIndex]
+        .querySelector("img");
 
-    if (!image) return;
+    if (!image) {
+        return;
+    }
 
     /*
-       Use the original image source.
-       Therefore the fullscreen viewer does NOT
-       use the square thumbnail crop.
+       Original source is used here.
+       Therefore portrait and landscape images
+       are displayed naturally.
     */
 
-    lightboxImage.src = image.src;
+    lightboxImage.src =
+        image.src;
 
-    lightboxImage.alt = image.alt || "Dance photograph";
+    lightboxImage.alt =
+        image.alt ||
+        "Dance photograph";
 
     lightboxCounter.textContent =
         `${String(currentIndex + 1).padStart(2, "0")} / ${String(galleryItems.length).padStart(2, "0")}`;
 
     lightbox.classList.add("active");
 
-    lightbox.setAttribute("aria-hidden", "false");
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
 
-    document.body.style.overflow = "hidden";
+    document.body.classList.add(
+        "lightbox-open"
+    );
 }
 
 
-/* Close image */
+/* ---------------------------------------------------------
+   CLOSE
+--------------------------------------------------------- */
 
 function closeLightbox() {
 
     lightbox.classList.remove("active");
 
-    lightbox.setAttribute("aria-hidden", "true");
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
 
-    document.body.style.overflow = "";
-
-    /*
-       Clearing the source prevents unnecessary
-       image memory usage after closing.
-    */
+    document.body.classList.remove(
+        "lightbox-open"
+    );
 
     setTimeout(() => {
 
-        if (!lightbox.classList.contains("active")) {
+        if (
+            !lightbox.classList.contains("active")
+        ) {
+
             lightboxImage.src = "";
+
         }
 
     }, 250);
 }
 
 
-/* Previous */
+/* ---------------------------------------------------------
+   PREVIOUS
+--------------------------------------------------------- */
 
 function previousImage() {
 
-    openLightbox(currentIndex - 1);
+    openLightbox(
+        currentIndex - 1
+    );
 
 }
 
 
-/* Next */
+/* ---------------------------------------------------------
+   NEXT
+--------------------------------------------------------- */
 
 function nextImage() {
 
-    openLightbox(currentIndex + 1);
+    openLightbox(
+        currentIndex + 1
+    );
 
 }
 
 
-/* Click gallery items */
+/* ---------------------------------------------------------
+   GALLERY CLICK
+--------------------------------------------------------- */
 
-galleryItems.forEach((item, index) => {
+galleryItems.forEach(
+    (item, index) => {
 
-    item.addEventListener("click", () => {
+        item.addEventListener(
+            "click",
+            () => {
 
-        openLightbox(index);
+                openLightbox(index);
 
-    });
+            }
+        );
 
-});
+    }
+);
 
 
-/* Buttons */
+/* ---------------------------------------------------------
+   BUTTONS
+--------------------------------------------------------- */
 
 lightboxClose.addEventListener(
     "click",
@@ -2095,44 +2660,64 @@ lightboxNext.addEventListener(
 );
 
 
-/* Click outside image */
+/* ---------------------------------------------------------
+   CLICK OUTSIDE IMAGE
+--------------------------------------------------------- */
 
-lightbox.addEventListener("click", (event) => {
+lightbox.addEventListener(
+    "click",
+    (event) => {
 
-    if (event.target === lightbox) {
-        closeLightbox();
-    }
+        if (
+            event.target === lightbox
+        ) {
 
-});
+            closeLightbox();
 
-
-/* Keyboard controls */
-
-document.addEventListener("keydown", (event) => {
-
-    if (!lightbox.classList.contains("active")) {
-        return;
-    }
-
-    if (event.key === "Escape") {
-
-        closeLightbox();
+        }
 
     }
+);
 
-    if (event.key === "ArrowLeft") {
 
-        previousImage();
+/* ---------------------------------------------------------
+   KEYBOARD
+--------------------------------------------------------- */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            !lightbox.classList.contains(
+                "active"
+            )
+        ) {
+
+            return;
+
+        }
+
+        if (event.key === "Escape") {
+
+            closeLightbox();
+
+        }
+
+        if (event.key === "ArrowLeft") {
+
+            previousImage();
+
+        }
+
+        if (event.key === "ArrowRight") {
+
+            nextImage();
+
+        }
 
     }
-
-    if (event.key === "ArrowRight") {
-
-        nextImage();
-
-    }
-
-});
+);
 
 
 /* =========================================================
@@ -2148,17 +2733,25 @@ const revealObserver =
 
         (entries, observer) => {
 
-            entries.forEach(entry => {
+            entries.forEach(
+                entry => {
 
-                if (entry.isIntersecting) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    entry.target.classList.add("visible");
+                        entry.target
+                            .classList
+                            .add("visible");
 
-                    observer.unobserve(entry.target);
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         },
 
@@ -2169,11 +2762,15 @@ const revealObserver =
     );
 
 
-revealElements.forEach(element => {
+revealElements.forEach(
+    element => {
 
-    revealObserver.observe(element);
+        revealObserver.observe(
+            element
+        );
 
-});
+    }
+);
 
 
 /* =========================================================
@@ -2184,25 +2781,53 @@ const hero =
     document.querySelector(".hero");
 
 
+let lastScrollY = 0;
+
+
+/*
+   Desktop/tablet parallax only.
+   We deliberately disable the parallax effect
+   on narrow mobile screens because moving the
+   background can make the composition appear
+   cropped or unstable.
+*/
+
 window.addEventListener(
     "scroll",
     () => {
 
-        if (!hero) return;
-
-        const scrollY =
+        lastScrollY =
             window.scrollY;
 
-        /*
-           Keep the parallax subtle.
-           It stops when the hero is mostly out
-           of the viewport.
-        */
+        const isMobile =
+            window.matchMedia(
+                "(max-width: 600px)"
+            ).matches;
 
-        if (scrollY < window.innerHeight) {
+        if (!hero) {
+            return;
+        }
+
+        if (isMobile) {
+
+            /*
+               Mobile keeps the background
+               completely stable.
+            */
 
             hero.style.backgroundPosition =
-                `center calc(50% + ${scrollY * 0.12}px)`;
+                "center center";
+
+            return;
+        }
+
+        if (
+            lastScrollY <
+            window.innerHeight
+        ) {
+
+            hero.style.backgroundPosition =
+                `center calc(50% + ${lastScrollY * 0.12}px)`;
 
         }
 
@@ -2214,21 +2839,30 @@ window.addEventListener(
 
 
 /* =========================================================
-   IMAGE ERROR HANDLING
+   IMAGE ERROR CHECK
 ========================================================= */
 
-document.querySelectorAll(".gallery img").forEach(image => {
+document
+    .querySelectorAll(".gallery img")
+    .forEach(
+        image => {
 
-    image.addEventListener("error", () => {
+            image.addEventListener(
+                "error",
+                () => {
 
-        console.warn(
-            "Image could not be loaded:",
-            image.getAttribute("src")
-        );
+                    console.warn(
+                        "Image could not be loaded:",
+                        image.getAttribute(
+                            "src"
+                        )
+                    );
 
-    });
+                }
+            );
 
-});
+        }
+    );
 
 
 </script>
